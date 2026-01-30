@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Summary</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1c222e", // Slightly lighter than background-dark for cards
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display antialiased text-slate-900 dark:text-white pb-24">
+<!-- Top AppBar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+<div class="flex items-center justify-between px-4 py-3 h-16">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-center flex-1 pr-10">Payment Summary</h1>
+</div>
+</header>
+<main class="flex-1 p-4 flex flex-col gap-6 max-w-md mx-auto w-full">
+<!-- Booking Summary Card -->
+<section class="flex flex-col gap-4">
+<h2 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1">Booking Details</h2>
+<div class="bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<!-- Salon Header -->
+<div class="p-4 flex items-center gap-4 border-b border-gray-100 dark:border-gray-700/50">
+<div class="w-16 h-16 rounded-2xl bg-gray-200 bg-cover bg-center shrink-0 shadow-inner" data-alt="Interior view of a luxury barbershop with dark leather chairs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5-T2BA8uiua3nswaMLQp1JCrkZ4zNJn0mpk82RJTQvIAp-MZju3BCQFCluS8NXf2TBAuwfx04wctOut_fOOd9sAlP9ibyRuH-mfy4hK3wyYlkVixEycnLf-jdJL1RZ9BZCk92JX-8XYYoJmiAInazsAO7-JnRVjOd2ZdcG5SqBxwN0owCKVYnoUTucUKEILPeJxVPMTSuAKbQXWoeLh7iBkYgk1gUo7a5vxo8SV2JoOeC9h-2x6cTRM7h2C0Xrsm2-i2AdF0_uGR5');">
+</div>
+<div class="flex flex-col justify-center gap-1">
+<h3 class="font-bold text-lg leading-tight">Gentleman's Lounge</h3>
+<div class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Riyadh, KSA</span>
+</div>
+</div>
+</div>
+<!-- Service Item -->
+<div class="p-4 flex items-center justify-between gap-3 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">content_cut</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="font-bold text-sm">Royal Haircut &amp; Shave</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Premium beard oil included</p>
+</div>
+</div>
+<div class="font-semibold text-sm">45 SAR</div>
+</div>
+<!-- Date & Time -->
+<div class="px-4 pb-4">
+<div class="flex items-center gap-3 bg-background-light dark:bg-background-dark rounded-xl p-3">
+<div class="text-gray-400 flex items-center">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Date &amp; Time</span>
+<span class="text-sm font-bold text-primary dark:text-white">Oct 24, 2023 • 08:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Method -->
+<section class="flex flex-col gap-4">
+<h2 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1">Payment Method</h2>
+<div class="flex flex-col gap-3">
+<!-- Apple Pay -->
+<label class="relative flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 cursor-pointer group transition-all duration-200 ring-2 ring-transparent has-[:checked]:ring-primary has-[:checked]:bg-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-black rounded-md flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-lg">ios</span>
+</div>
+<span class="font-semibold text-sm">Apple Pay</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600 group-has-[:checked]:border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary opacity-0 group-has-[:checked]:opacity-100 transition-opacity"></div>
+</div>
+<input checked="" class="absolute opacity-0 w-full h-full cursor-pointer" name="payment" type="radio"/>
+</label>
+<!-- Mada -->
+<label class="relative flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 cursor-pointer group transition-all duration-200 ring-2 ring-transparent has-[:checked]:ring-primary has-[:checked]:bg-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-white border border-gray-200 rounded-md flex items-center justify-center overflow-hidden shrink-0 p-1">
+<!-- Abstract representation of Mada Logo -->
+<div aria-label="Mada logo" class="w-full h-full flex flex-col justify-between">
+<div class="h-[40%] bg-[#005c6d] w-full rounded-sm"></div>
+<div class="h-[15%] bg-[#a8a9ad] w-[60%] rounded-sm"></div>
+</div>
+</div>
+<span class="font-semibold text-sm">Mada / مدى</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600 group-has-[:checked]:border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary opacity-0 group-has-[:checked]:opacity-100 transition-opacity"></div>
+</div>
+<input class="absolute opacity-0 w-full h-full cursor-pointer" name="payment" type="radio"/>
+</label>
+<!-- Credit Card -->
+<label class="relative flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 cursor-pointer group transition-all duration-200 ring-2 ring-transparent has-[:checked]:ring-primary has-[:checked]:bg-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center text-gray-600 dark:text-gray-300 shrink-0">
+<span class="material-symbols-outlined text-lg">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-sm">Credit Card</span>
+<span class="text-[10px] text-gray-500">**** 4242</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-600 group-has-[:checked]:border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary opacity-0 group-has-[:checked]:opacity-100 transition-opacity"></div>
+</div>
+<input class="absolute opacity-0 w-full h-full cursor-pointer" name="payment" type="radio"/>
+</label>
+</div>
+</section>
+<!-- Price Breakdown -->
+<section class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-sm border border-gray-100 dark:border-gray-800 mt-2">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-500 dark:text-gray-400">Subtotal</span>
+<span class="font-medium text-slate-900 dark:text-white">45.00 SAR</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-500 dark:text-gray-400">VAT (15%)</span>
+<span class="font-medium text-slate-900 dark:text-white">6.75 SAR</span>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-700 my-1"></div>
+<div class="flex justify-between items-center">
+<span class="font-bold text-base text-slate-900 dark:text-white">Total Amount</span>
+<span class="font-extrabold text-xl text-primary">51.75 SAR</span>
+</div>
+</div>
+</section>
+<!-- Guarantee/Trust Badge (Optional but good for payment screens) -->
+<div class="flex justify-center items-center gap-2 text-gray-400 mt-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-xs font-medium">Secure Payment Encrypted</span>
+</div>
+</main>
+<!-- Bottom Sticky Button -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent z-40">
+<div class="max-w-md mx-auto">
+<button class="w-full h-14 bg-primary hover:bg-blue-700 active:scale-[0.98] transition-all text-white font-bold text-lg rounded-full shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2">
+<span>تأكيد الدفع</span>
+<!-- Optional: Adding a subtle icon for action -->
+<span class="material-symbols-outlined text-white/80" style="font-size: 20px;">check_circle</span>
+</button>
+</div>
+</div>
+</body></html>

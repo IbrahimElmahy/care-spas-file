@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logout Confirmation - Stylek | ستايلك</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e61919",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#181111", // Using the deep dark brown/black from context
+                        "surface-dark": "#241a1a",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased overflow-hidden select-none">
+<div class="relative h-screen w-full overflow-hidden">
+<div class="absolute inset-0 z-0 flex flex-col">
+<div class="h-20 bg-background-light dark:bg-background-dark flex items-end pb-4 px-6 border-b border-gray-800/20">
+<div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+<div class="flex-1"></div>
+<div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+</div>
+<div class="flex-1 relative bg-gray-900 w-full h-full">
+<div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&amp;w=2831&amp;auto=format&amp;fit=crop')] bg-cover bg-center" data-alt="Dark abstract map texture of a city at night"></div>
+<div class="absolute bottom-32 left-4 right-4 h-32 bg-surface-dark rounded-2xl shadow-xl p-4 flex gap-4 items-center border border-white/5">
+<div class="w-20 h-20 rounded-xl bg-gray-700 shrink-0 bg-[url('https://images.unsplash.com/photo-1503951914875-befbb7135952?q=80&amp;w=200&amp;auto=format&amp;fit=crop')]" data-alt="Barber shop interior thumbnail"></div>
+<div class="flex flex-col gap-2">
+<div class="h-4 w-32 bg-gray-700 rounded-full"></div>
+<div class="h-3 w-20 bg-gray-800 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 z-40 bg-[#0f0a0a]/80 backdrop-blur-md transition-opacity duration-300"></div>
+<div class="absolute inset-x-0 bottom-0 z-50 flex flex-col justify-end">
+<div class="relative flex w-full flex-col items-stretch bg-[#181111] rounded-t-[32px] shadow-2xl ring-1 ring-white/10 pb-8 overflow-hidden animate-slide-up">
+<div class="flex w-full items-center justify-center pt-3 pb-2" id="bottom-sheet-handle">
+<div class="h-1.5 w-12 rounded-full bg-[#533c3c]"></div>
+</div>
+<div class="flex flex-col items-center px-6 pt-6 pb-8">
+<div class="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 border border-primary/20 shadow-[0_0_15px_rgba(230,25,25,0.15)]">
+<span class="material-symbols-outlined text-[40px] text-primary">logout</span>
+</div>
+<div class="text-center mb-2">
+<h2 class="text-white tracking-tight text-[26px] font-extrabold leading-tight">تسجيل الخروج</h2>
+</div>
+<div class="text-center mb-10 max-w-[85%]">
+<p class="text-gray-400 text-base font-medium leading-relaxed">
+                            هل أنت متأكد من أنك تريد تسجيل الخروج من <span class="text-white font-bold">Stylek | ستايلك</span>؟
+                        </p>
+</div>
+<div class="w-full space-y-3">
+<button class="group relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-primary text-white transition-all active:scale-[0.98] hover:bg-red-600 shadow-lg shadow-red-900/20">
+<span class="relative z-10 text-[17px] font-bold tracking-wide">تسجيل الخروج</span>
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0"></div>
+</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-[#2a1d1d] text-gray-300 transition-all active:scale-[0.98] hover:bg-[#382929] hover:text-white border border-transparent hover:border-white/5">
+<span class="truncate text-[17px] font-bold tracking-wide">إلغاء</span>
+</button>
+</div>
+</div>
+<div class="h-6 w-full bg-[#181111]"></div>
+</div>
+</div>
+</div>
+<style>@keyframes slide-up {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+    </style>
+
+</body></html>

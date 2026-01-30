@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Location Permission - Stylek</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D4AF37", // Gold primary
+                        "primary-dark": "#B5952F",
+                        "gold": "#D4AF37",
+                        "gold-light": "#F3E5AB",
+                        "silver": "#A0A0A0",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#121212", // Rich dark charcoal
+                        "surface-dark": "#1E1E1E", // Deep charcoal for elements
+                        "surface-light": "#2A2A2A",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "arabic": ["Almarai", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "2xl": "4rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(212, 175, 55, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Almarai', 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.07) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark min-h-screen flex flex-col items-center justify-center relative overflow-hidden transition-colors duration-300">
+<div class="absolute inset-0 bg-pattern opacity-40 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+<main class="w-full max-w-md h-screen max-h-[900px] flex flex-col relative z-10 p-6 sm:p-8">
+<header class="flex justify-end pt-4 pb-2">
+<button class="text-gray-500 hover:text-white text-sm font-medium transition-colors">
+            تخطي
+        </button>
+</header>
+<div class="flex-1 flex flex-col items-center justify-center text-center space-y-8 mt-4">
+<div class="relative w-64 h-64 flex items-center justify-center mb-6">
+<div class="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<div class="relative w-48 h-48 bg-surface-dark/90 backdrop-blur-md rounded-full border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden ring-1 ring-gold/10">
+<div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;q=80&amp;w=300&amp;h=300')] bg-cover bg-center grayscale contrast-150"></div>
+<div class="relative transform translate-y-[-10px]">
+<div class="w-20 h-28 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full rounded-br-none transform rotate-45 flex items-center justify-center shadow-lg border border-gold/40 relative overflow-hidden">
+<div class="absolute inset-0">
+<div class="w-[200%] h-full absolute top-0 left-[-50%] bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#D4AF37_10px,#D4AF37_20px,transparent_20px,transparent_30px,#4b5563_30px,#4b5563_40px)] opacity-90 rotate-[-45deg] scale-150 origin-center mix-blend-overlay"></div>
+<div class="w-[200%] h-full absolute top-0 left-[-50%] bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#D4AF37_10px,#D4AF37_20px,transparent_20px,transparent_30px,transparent_30px,transparent_40px)] opacity-30 rotate-[-45deg] scale-150 origin-center"></div>
+</div>
+<div class="w-6 h-6 bg-background-dark rounded-full shadow-inner relative z-10 border border-gold/20"></div>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-4 bg-black/60 blur-md rounded-full"></div>
+</div>
+<div class="absolute top-10 left-8 w-2 h-2 bg-gold rounded-full animate-bounce delay-100 shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
+<div class="absolute bottom-12 right-10 w-1.5 h-1.5 bg-silver rounded-full animate-bounce delay-300 opacity-60"></div>
+</div>
+</div>
+</div>
+<div class="space-y-4 max-w-xs mx-auto">
+<h1 class="text-3xl font-extrabold text-white leading-tight">
+                اسمح لـ ستايلك بالوصول لموقعك
+            </h1>
+<p class="text-base text-gray-400 font-light leading-relaxed">
+                للحصول على توصيات مخصصة من Stylek | ستايلك لأفضل الصالونات القريبة منك
+            </p>
+</div>
+</div>
+<div class="w-full space-y-4 pt-8 pb-8">
+<button class="w-full py-4 px-6 bg-surface-dark border border-gold text-gold hover:bg-surface-light text-lg font-bold rounded-full shadow-glow transform transition hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 group">
+<span class="material-icons-round text-xl group-hover:text-gold-light transition-colors">near_me</span>
+<span class="group-hover:text-gold-light transition-colors">السماح بالوصول</span>
+</button>
+<button class="w-full py-3 px-6 bg-transparent text-gray-500 hover:text-white font-medium text-base rounded-full transition-colors flex items-center justify-center gap-2">
+<span>تحديد يدوياً</span>
+<span class="material-icons-round text-lg opacity-70 rotate-180">search</span>
+</button>
+<p class="text-xs text-center text-gray-600 mt-4">
+            يمكنك تغيير هذا الإعداد لاحقاً في إعدادات الهاتف
+        </p>
+</div>
+</main>
+
+</body></html>

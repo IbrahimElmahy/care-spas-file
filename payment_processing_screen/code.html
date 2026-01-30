@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Processing</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#16439c",
+              "background-light": "#f6f6f8",
+              "background-dark": "#111621",
+            },
+            fontFamily: {
+              "display": ["Manrope", "Noto Sans Arabic", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            animation: {
+                'shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+                shimmer: {
+                    '0%': { transform: 'translateX(-100%)' },
+                    '100%': { transform: 'translateX(100%)' }
+                }
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display overflow-hidden selection:bg-primary/30 text-slate-900 dark:text-white">
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[120%] h-[50%] bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-[20%] left-1/2 -translate-x-1/2 w-[80%] h-[40%] bg-primary/5 blur-[80px] rounded-full"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center h-full w-full max-w-md mx-auto p-6">
+<div class="mb-12 relative group/logo">
+<div class="relative flex items-center justify-center">
+<div class="relative z-10 flex items-center justify-center gap-4">
+<span class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight font-display">ستايلك</span>
+<div class="h-8 w-0.5 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+<span class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight font-display">Stylek</span>
+</div>
+<div class="absolute inset-0 bg-primary/20 blur-2xl -z-10 rounded-full scale-x-125 scale-y-75"></div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 w-full mb-10">
+<h2 class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight px-4 text-center pb-2">
+                جاري معالجة الدفع...
+            </h2>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium leading-normal px-4 text-center">
+                يرجى عدم إغلاق التطبيق
+            </p>
+</div>
+<div class="w-full max-w-[200px] flex flex-col gap-3 p-4">
+<div class="h-1.5 w-full rounded-full bg-slate-200 dark:bg-[#3d4452] overflow-hidden relative">
+<div class="absolute inset-0 h-full w-full bg-primary origin-left rounded-full animate-pulse"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-full h-full animate-shimmer"></div>
+</div>
+</div>
+<div class="absolute bottom-10 flex items-center gap-2 text-slate-400 dark:text-slate-600">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="text-xs font-semibold tracking-widest uppercase font-display">Secure Transaction</span>
+</div>
+</div>
+</body></html>

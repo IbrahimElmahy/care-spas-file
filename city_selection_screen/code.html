@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>City Selection Screen</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Noto+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1c2333", // Slightly lighter for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for dark theme feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111621; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3748; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a5568; 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors">
+<div class="flex items-center justify-between px-4 py-3">
+<!-- Back Button (Points Right for RTL) -->
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-all text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_forward</span>
+</button>
+<!-- Title -->
+<h1 class="text-lg font-bold tracking-tight">اختر مدينتك</h1>
+<!-- Spacer to balance header -->
+<div class="size-10"></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-md mx-auto p-4 flex flex-col gap-6">
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-12 pr-12 pl-4 rounded-full bg-surface-light dark:bg-surface-dark border-transparent focus:border-primary focus:ring-0 text-right placeholder-gray-400 dark:text-white shadow-sm transition-all" placeholder="ابحث عن مدينة..." type="text"/>
+</div>
+<!-- Current Location Button -->
+<button class="flex items-center justify-between w-full p-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-800 shadow-sm active:scale-[0.98] transition-all group">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+</div>
+<span class="font-medium text-base">استخدم موقعي الحالي</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 rotate-180">chevron_right</span>
+</button>
+<!-- Cities List Section -->
+<div class="flex flex-col gap-3">
+<h2 class="text-xl font-bold mb-1 px-1 text-slate-800 dark:text-gray-100">المدن المتاحة</h2>
+<!-- City Item: Riyadh -->
+<label class="relative flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/50 dark:hover:border-primary/50 cursor-pointer transition-all group">
+<input checked="" class="peer sr-only" name="city" type="radio" value="riyadh"/>
+<div class="flex items-center gap-4">
+<div class="relative size-14 rounded-full overflow-hidden bg-gray-700 ring-2 ring-transparent peer-checked:ring-primary group-hover:ring-offset-2 dark:ring-offset-background-dark transition-all">
+<img alt="City skyline of Riyadh with modern architecture" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" data-alt="City skyline of Riyadh with modern architecture" data-location="Riyadh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH__wRnALfV0s0MFbnClmLAmCAZUQ-f3AdiREOS1OyIEFEWAyZLV8wFJBiDfs1eBLGG0ezC05QDYj2CZF2iULMkHdAvMZM2t98daSOnBKz8nwY3TCcSUucYRJl1AHqm5e022v2FX4gQVzYVQTS5dv-Xo6JMp0_su3JyOOVipBdb6gs3s0COImtGx0r8mno3bibWYzeSfeR2_iAn8CEgNRJ5Rx_Mv8PkaKc5bAPTrVEzmccNtapW5jJFTmfmPl4gSmI7hL8oa9r-K6e"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">الرياض</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">العاصمة</span>
+</div>
+</div>
+<!-- Selection Indicator -->
+<div class="size-6 rounded-full border-2 border-gray-300 dark:border-gray-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<!-- Peer styling for the border of the container when checked -->
+<div class="absolute inset-0 rounded-xl border-2 border-primary opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<!-- City Item: Jeddah -->
+<label class="relative flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/50 dark:hover:border-primary/50 cursor-pointer transition-all group">
+<input class="peer sr-only" name="city" type="radio" value="jeddah"/>
+<div class="flex items-center gap-4">
+<div class="relative size-14 rounded-full overflow-hidden bg-gray-700 ring-2 ring-transparent peer-checked:ring-primary group-hover:ring-offset-2 dark:ring-offset-background-dark transition-all">
+<img alt="Coastal view of Jeddah near the Red Sea" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Coastal view of Jeddah near the Red Sea" data-location="Jeddah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx4it4Re41GzAEWeEARQLrQddgXXyblxQKN3bnLWw-EzFjJpPPA1Dw3iDsdlbyQi7_GSqEmCRch-sdfxvQYJInn3uQS9Cx0hFR6zVrRhwCRWD4iky9oy9te1I4OsbSNVNjUD-uRPflHsiMbMBFdbGwnAcOZc3C5nJ1QL72-tfVZdSrCK4nxIYjEX6FZEAt97XJkrCek_nSEXZpt77SYElITvG7D9cBVbzv2gb72Tp_wg1P1mvidi59THLTFrquLdoKGCr1qBjBPGOK"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">جدة</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">عروس البحر الأحمر</span>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-gray-300 dark:border-gray-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="absolute inset-0 rounded-xl border-2 border-primary opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<!-- City Item: Dammam -->
+<label class="relative flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/50 dark:hover:border-primary/50 cursor-pointer transition-all group">
+<input class="peer sr-only" name="city" type="radio" value="dammam"/>
+<div class="flex items-center gap-4">
+<div class="relative size-14 rounded-full overflow-hidden bg-gray-700 ring-2 ring-transparent peer-checked:ring-primary group-hover:ring-offset-2 dark:ring-offset-background-dark transition-all">
+<img alt="Abstract view of port structures in Dammam" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Abstract view of port structures in Dammam" data-location="Dammam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmPLhkxtB7aJYfV0UJbSCMjGQNUtbiaDvG6OfwF7BFPQFg_ThG6qLSdGjqophziwaAZOZ8kKsLXLK63ncx6fX_m3t8811whaCPtQ20zuG7t7auerL1Qc20EKbB--h60hf9XjitfOecwptPO1t1R9RMzCHthp8hauyjgQ-X2X99w5KglK7BoplZoSr9CJaUfeCPw_xh70nCcRniv2s_F4FYj_gwhd3qTgscjF8HkExIBjlg2BhKVnvdUHML3Zrs74FHe3C5nplpj6VH"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">الدمام</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">المنطقة الشرقية</span>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-gray-300 dark:border-gray-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="absolute inset-0 rounded-xl border-2 border-primary opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<!-- City Item: Mecca -->
+<label class="relative flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/50 dark:hover:border-primary/50 cursor-pointer transition-all group">
+<input class="peer sr-only" name="city" type="radio" value="mecca"/>
+<div class="flex items-center gap-4">
+<div class="relative size-14 rounded-full overflow-hidden bg-gray-700 ring-2 ring-transparent peer-checked:ring-primary group-hover:ring-offset-2 dark:ring-offset-background-dark transition-all">
+<img alt="Light shining on architectural details in Mecca" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Light shining on architectural details in Mecca" data-location="Mecca" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcsRq9p_qKL3znHg1hYPCUDMObwU7tAsmDppHTQRvIuYtKPBpbGzTNkNR3EerrhMx38fwSi_4B_O7_82dKtoLyZvTsHoZy8XSoUssx4-V4If9sM9UdpE0q2V3hXLk4r-9x7AHifiqhTc5hFy94Z_KMtR-m_nPoT4o0bzX-vdoHCQYKe7GbA7gs45mTW2cu_lK2em2p3PfubbHysUNUg57k_H-hRvVHJdPKYaVjP96MuHozsDp7cM6KBT6DBnyOr_Fylw3ImfpI_t6X"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">مكة المكرمة</span>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-gray-300 dark:border-gray-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="absolute inset-0 rounded-xl border-2 border-primary opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<!-- City Item: Medina -->
+<label class="relative flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/50 dark:hover:border-primary/50 cursor-pointer transition-all group">
+<input class="peer sr-only" name="city" type="radio" value="medina"/>
+<div class="flex items-center gap-4">
+<div class="relative size-14 rounded-full overflow-hidden bg-gray-700 ring-2 ring-transparent peer-checked:ring-primary group-hover:ring-offset-2 dark:ring-offset-background-dark transition-all">
+<img alt="Minarets of a mosque against the sky in Medina" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Minarets of a mosque against the sky in Medina" data-location="Medina" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2ba8g_piMYtfrcP1ohxlV3RxRF99L6Zg6FBFIoGBT0kiIgYLIPs42xaTaH218RG9wR5AKiHdO47HyvvehX_yD1qs0AKgQ9RBgjZO0VSLigP3g2FRkH1KuyWD3wyUb2iDd3nfgWBq3poB0eRQbIzWLwFXQfBhQIFf2MB0MJzpM5aaPqGLuEQTgewv1Itf_Tf1YPN5_uphNiIQC9lGOj_Vg11RIaGK50mkaGTkWRQgxbizNr6XFD-Rn85h_8pYJuZBeR-pZGZnxVyA"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">المدينة المنورة</span>
+</div>
+</div>
+<div class="size-6 rounded-full border-2 border-gray-300 dark:border-gray-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="absolute inset-0 rounded-xl border-2 border-primary opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+</div>
+</main>
+<!-- Bottom Action Bar (Optional but fits premium mobile UX) -->
+<div class="sticky bottom-0 p-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur border-t border-gray-200 dark:border-gray-800">
+<button class="w-full py-4 rounded-full bg-primary text-white font-bold text-lg shadow-lg shadow-primary/30 active:scale-[0.98] transition-all hover:bg-blue-700">
+            تأكيد الاختيار
+        </button>
+</div>
+</body></html>

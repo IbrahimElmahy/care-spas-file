@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stylek - Search</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#1152d4",
+                "primary-dark": "#0d3ca0",
+                "background-light": "#f6f6f8",
+                "background-dark": "#101622",
+                "surface-dark": "#1c2333",
+                "gold": "#D4AF37",
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "Noto Sans Arabic", "sans-serif"],
+                "body": ["Noto Sans Arabic", "sans-serif"],
+                },
+                borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                backgroundImage: {
+                    'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #FZD770 100%)',
+                    'primary-gradient': 'linear-gradient(135deg, #1152d4 0%, #1e6af5 100%)',
+                }
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* iOS Keyboard Key style */
+        .kbd-key {
+            background-color: #48484a;
+            box-shadow: 0 1px 0 #000;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            color: white;
+            height: 44px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.1s;
+        }
+        .kbd-key:active {
+            background-color: #6e6e70;
+        }
+        .kbd-row {
+            display: flex;
+            gap: 6px;
+            padding: 0 3px;
+            margin-bottom: 12px;
+            justify-content: center;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body text-white overflow-hidden h-screen flex flex-col">
+<!-- Status Bar Spacer (Simulated) -->
+<div class="h-12 w-full shrink-0"></div>
+<!-- Search Header -->
+<div class="px-4 pb-2 shrink-0 z-20">
+<div class="flex items-center gap-3">
+<!-- Search Input -->
+<div class="flex-1 relative">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</div>
+<input autofocus="" class="w-full bg-surface-dark border-2 border-primary/50 focus:border-primary text-white text-base rounded-full py-3 pr-11 pl-10 placeholder-gray-500 focus:ring-0 focus:outline-none transition-all shadow-lg shadow-primary/5" placeholder="ابحث عن صالون أو خدمة..." type="text" value="حلاقة"/>
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center">
+<button class="text-gray-400 hover:text-white transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+</div>
+<!-- Cancel Action -->
+<button class="text-white font-medium text-sm whitespace-nowrap hover:text-primary transition-colors">
+                إلغاء
+            </button>
+</div>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-[300px]"> <!-- Extra padding for keyboard -->
+<!-- Recent Searches Section -->
+<div class="pt-4 pb-2">
+<div class="px-5 flex justify-between items-end mb-2">
+<h3 class="text-white text-base font-bold leading-tight">عمليات البحث الأخيرة</h3>
+<button class="text-xs text-primary font-medium">مسح الكل</button>
+</div>
+<div class="flex flex-col">
+<!-- Item 1 -->
+<div class="group flex items-center gap-4 px-5 py-3 active:bg-surface-dark/50 transition-colors cursor-pointer border-b border-white/5">
+<div class="text-gray-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">history</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-base font-normal truncate">صالون <span class="text-gold font-bold">VIP</span></p>
+</div>
+<button class="text-gray-500 hover:text-red-400 transition-colors p-2 -m-2">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="group flex items-center gap-4 px-5 py-3 active:bg-surface-dark/50 transition-colors cursor-pointer border-b border-white/5">
+<div class="text-gray-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">history</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-base font-normal truncate">حلاقة ذقن</p>
+</div>
+<button class="text-gray-500 hover:text-red-400 transition-colors p-2 -m-2">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Item 3 -->
+<div class="group flex items-center gap-4 px-5 py-3 active:bg-surface-dark/50 transition-colors cursor-pointer border-b border-white/5">
+<div class="text-gray-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">history</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-base font-normal truncate">مساج استرخائي</p>
+</div>
+<button class="text-gray-500 hover:text-red-400 transition-colors p-2 -m-2">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Popular Categories Section -->
+<div class="pt-4">
+<h3 class="text-white text-base font-bold leading-tight px-5 mb-4">الأكثر طلباً</h3>
+<div class="flex gap-3 px-5 overflow-x-auto no-scrollbar pb-4">
+<!-- Chip 1: Haircut (Active/Gradient) -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 pl-4 pr-3 active:scale-95 transition-transform hover:border-primary/50">
+<span class="material-symbols-outlined text-primary text-[20px]">content_cut</span>
+<span class="text-white text-sm font-medium">قص شعر</span>
+</button>
+<!-- Chip 2: Beard -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 pl-4 pr-3 active:scale-95 transition-transform hover:border-primary/50">
+<span class="material-symbols-outlined text-primary text-[20px]">face</span>
+<span class="text-white text-sm font-medium">حلاقة ذقن</span>
+</button>
+<!-- Chip 3: Skincare -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 pl-4 pr-3 active:scale-95 transition-transform hover:border-primary/50">
+<span class="material-symbols-outlined text-primary text-[20px]">face_retouching_natural</span>
+<span class="text-white text-sm font-medium">عناية بالبشرة</span>
+</button>
+<!-- Chip 4: Groom (Gold Accent) -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-gold/30 pl-4 pr-3 active:scale-95 transition-transform shadow-[0_0_10px_rgba(212,175,55,0.1)]">
+<span class="material-symbols-outlined text-gold text-[20px]">diamond</span>
+<span class="text-gold text-sm font-medium">تجهيز عريس</span>
+</button>
+</div>
+</div>
+<!-- Suggestions based on input -->
+<div class="pt-2">
+<h3 class="text-gray-500 text-sm font-medium leading-tight px-5 mb-2">مقترحات</h3>
+<div class="flex flex-col">
+<div class="flex items-center gap-4 px-5 py-3 hover:bg-surface-dark/30 transition-colors cursor-pointer">
+<div class="text-primary bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<p class="text-white text-base font-normal flex-1 truncate">حلاقة <span class="font-bold">أطفال</span></p>
+<span class="material-symbols-outlined text-gray-600 -rotate-45 text-[20px]">arrow_upward</span>
+</div>
+<div class="flex items-center gap-4 px-5 py-3 hover:bg-surface-dark/30 transition-colors cursor-pointer">
+<div class="text-primary bg-primary/10 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<p class="text-white text-base font-normal flex-1 truncate">حلاقة <span class="font-bold">شعر طويل</span></p>
+<span class="material-symbols-outlined text-gray-600 -rotate-45 text-[20px]">arrow_upward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Keyboard Overlay (Simulated iOS Dark Mode Keyboard) -->
+<div class="absolute bottom-0 w-full bg-[#1c1c1e]/95 backdrop-blur-xl border-t border-white/10 pb-2 z-50 rounded-t-2xl shadow-2xl animate-in slide-in-from-bottom duration-300">
+<!-- Keyboard suggestions bar -->
+<div class="flex justify-center items-center py-2 gap-4 border-b border-white/5 mb-2">
+<span class="text-white text-sm">حلاقة</span>
+<div class="w-[1px] h-4 bg-gray-600"></div>
+<span class="text-white text-sm">حلاقة شعر</span>
+<div class="w-[1px] h-4 bg-gray-600"></div>
+<span class="text-white text-sm">حلاق</span>
+</div>
+<div class="px-1" style="direction: ltr;"> <!-- LTR for keyboard layout logic -->
+<!-- Row 1 -->
+<div class="kbd-row">
+<div class="kbd-key">ق</div><div class="kbd-key">ف</div><div class="kbd-key">غ</div><div class="kbd-key">ع</div><div class="kbd-key">ه</div><div class="kbd-key">خ</div><div class="kbd-key">ح</div><div class="kbd-key">ج</div><div class="kbd-key">د</div>
+</div>
+<!-- Row 2 -->
+<div class="kbd-row px-4">
+<div class="kbd-key">ش</div><div class="kbd-key">س</div><div class="kbd-key">ي</div><div class="kbd-key">ب</div><div class="kbd-key">ل</div><div class="kbd-key">ا</div><div class="kbd-key">ت</div><div class="kbd-key">ن</div><div class="kbd-key">م</div><div class="kbd-key">ك</div>
+</div>
+<!-- Row 3 -->
+<div class="kbd-row px-12">
+<div class="kbd-key flex-grow-[0.5] !bg-[#656568]"><span class="material-symbols-outlined text-[20px]">arrow_upward</span></div>
+<div class="kbd-key">ط</div><div class="kbd-key">ئ</div><div class="kbd-key">ء</div><div class="kbd-key">ؤ</div><div class="kbd-key">ر</div><div class="kbd-key">لا</div><div class="kbd-key">ى</div><div class="kbd-key">ة</div><div class="kbd-key">و</div><div class="kbd-key">ز</div><div class="kbd-key">ظ</div>
+<div class="kbd-key flex-grow-[0.5] !bg-[#656568]"><span class="material-symbols-outlined text-[20px]">backspace</span></div>
+</div>
+<!-- Row 4 -->
+<div class="kbd-row px-1 items-end">
+<div class="kbd-key !w-[25%] !bg-[#656568] text-sm">123</div>
+<div class="kbd-key !w-[50%]">مسافة</div>
+<div class="kbd-key !w-[25%] !bg-primary !text-white font-bold text-sm">بحث</div>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="h-1 w-32 bg-white/40 rounded-full mx-auto mt-2 mb-1"></div>
+</div>
+</body></html>

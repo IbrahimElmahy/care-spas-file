@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stylek | ستايلك</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0F0F12", // Deep charcoal/black per plan
+                        "card-dark": "#1c1f26",
+                        "input-dark": "#292e38",
+                        "text-secondary": "#9ea7b7",
+                        "gold": "#fbbf24",
+                    },
+                    fontFamily: {
+                        "display": ["Tajawal", "Manrope", "Noto Sans", "sans-serif"],
+                        "body": ["Tajawal", "Manrope", "Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: 'Tajawal', 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white pb-24">
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-5 pt-6 pb-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 ring-2 ring-primary/20" data-alt="Portrait of a young man with a beard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7YIdO1__bI9Lws1w2jl_j3okZ6EzBJgSB0KAYSOgyQu6EgpWG7r76m9jwgizv_8hIWYssdjKAnjwfPWZAfa801XonYjSsIDv4JWcP0KugVkKdHIaRRiWHONDzeNJfEMDKId53Ye7_T-y5ca-RLIBjm8gd2rv6hbcyklisK6IlNtlBomWaIYmRcSt6mzWK6Ht5wQ3eDcdsn1SeJqjFMEyDNXZxpBgiXP2VMBLAUBrUCtIWkMN4tpX8dsF77RqXlgz9C98Zzg3t0Kvh");'>
+</div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-[#0F0F12]"></div>
+</div>
+<div class="flex flex-col">
+<p class="text-primary text-xs font-bold tracking-wide">Stylek | ستايلك</p>
+<h2 class="text-lg font-bold leading-tight tracking-tight">مرحباً، محمد</h2>
+</div>
+</div>
+<button class="relative flex items-center justify-center size-10 rounded-full bg-input-dark/50 text-white hover:bg-input-dark transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2.5 size-2 bg-red-500 rounded-full ring-2 ring-[#0F0F12]"></span>
+</button>
+</div>
+</header>
+<div class="px-5 py-4">
+<label class="flex flex-col w-full">
+<div class="relative flex w-full items-center rounded-full h-12 bg-input-dark shadow-sm ring-1 ring-white/5 focus-within:ring-primary transition-all">
+<div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-full bg-transparent border-none text-white placeholder:text-text-secondary pr-12 pl-4 focus:ring-0 rounded-full text-base font-medium" placeholder="ابحث في ستايلك عن صالون أو خدمة" type="text" value=""/>
+<div class="absolute inset-y-0 left-0 flex items-center pl-1.5">
+<button class="flex items-center justify-center size-9 rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+</label>
+</div>
+<div class="w-full overflow-x-auto hide-scrollbar pl-5">
+<div class="flex gap-3 px-5 w-max">
+<button class="flex h-11 shrink-0 items-center justify-center gap-x-2.5 rounded-full bg-primary px-5 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-white text-[20px]">content_cut</span>
+<p class="text-white text-sm font-bold">قص شعر</p>
+</button>
+<button class="flex h-11 shrink-0 items-center justify-center gap-x-2.5 rounded-full bg-input-dark px-5 border border-white/5 hover:bg-white/5 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-white text-[20px]">face</span>
+<p class="text-white text-sm font-medium">تهذيب لحية</p>
+</button>
+<button class="flex h-11 shrink-0 items-center justify-center gap-x-2.5 rounded-full bg-input-dark px-5 border border-white/5 hover:bg-white/5 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-white text-[20px]">spa</span>
+<p class="text-white text-sm font-medium">عناية بالبشرة</p>
+</button>
+<button class="flex h-11 shrink-0 items-center justify-center gap-x-2.5 rounded-full bg-input-dark px-5 border border-white/5 hover:bg-white/5 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-white text-[20px]">palette</span>
+<p class="text-white text-sm font-medium">صبغ</p>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between px-5 pt-8 pb-4">
+<h2 class="text-white text-xl font-bold leading-tight">صالونات مميزة</h2>
+<a class="text-primary text-sm font-bold hover:text-primary/80 transition-colors" href="#">عرض الكل</a>
+</div>
+<div class="flex flex-col gap-6 px-5 pb-4">
+<div class="group relative flex flex-col rounded-[2rem] bg-card-dark shadow-xl overflow-hidden ring-1 ring-white/5 transition-transform hover:-translate-y-1">
+<div class="relative h-48 w-full">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern barbershop interior with leather chairs and warm lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBU-BXKNb1R_KwQF25juK8PNNnxPyzug9YHifw3zWR77Z2duFS6XNXfBqwtM17wvdaiHbre3b04_cNt4vYFm_1xMLn8Dl7DqbJ56pmHz8qDoRknudCT2duKuJGJgfJQFNmuX7puQmUhGYsf7shWSeu7qmo7JdiB2spgdHAqCQC1P3yVf8wIdogkG03dqj3laq0Mnt-2P-WlYP-X-yR4pHgmRXarvueEqMGtfaZ8A0IDF4dFQywj5qq48OtfAdjRMjUIm1gIu_6EIexG");'>
+</div>
+<div class="absolute top-3 right-3 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<p class="text-xs font-bold text-white flex items-center gap-1">
+<span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
+                        مفتوح الآن
+                    </p>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent"></div>
+</div>
+<div class="flex flex-col gap-3 p-5 pt-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">صالون النخبة</h3>
+<p class="text-text-secondary text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            حي العليا، الرياض
+                        </p>
+</div>
+<div class="flex items-center gap-1 bg-yellow-500/10 px-2 py-1 rounded-lg border border-yellow-500/20">
+<span class="text-gold text-xs">⭐</span>
+<span class="text-gold text-sm font-bold">4.8</span>
+<span class="text-text-secondary text-xs">(120)</span>
+</div>
+</div>
+<div class="h-px bg-white/5 my-1"></div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<span class="text-text-secondary text-xs">يبدأ السعر من</span>
+<span class="text-white text-lg font-bold font-display">50 <span class="text-sm font-medium text-text-secondary">ر.س</span></span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2.5 px-6 rounded-full shadow-lg shadow-primary/25 transition-all active:scale-95">
+                        احجز الآن
+                    </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col rounded-[2rem] bg-card-dark shadow-xl overflow-hidden ring-1 ring-white/5 transition-transform hover:-translate-y-1">
+<div class="relative h-48 w-full">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxury spa treatment room for men" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlvvjqlshWE0QMiGMTYkAABgJhRoklIPBo2gPhm_5a7AVkGq36uxefXChVv1QYwmD10j5zbhNO_IGmfLm-Kl9BCjRU0BCkd6dA6tSocCNPXM_8hwYJZpl-or0wq5WDhPDZOMXSQuyPhEucfH0uPGCcDJnALiwdKd0r1bwfDAqNuKYVpsY_0I7kIJmVg9kzVdeTJBhMm7F4UUFFdupkTNIf6z1ZKrP3ufrssDqpeRntixdkRDOblV-ZSQlJPLdIA3WSBEUj5vP2vz4M");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent"></div>
+</div>
+<div class="flex flex-col gap-3 p-5 pt-2">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">جنتلمان لاونج</h3>
+<p class="text-text-secondary text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            طريق الملك فهد، جدة
+                        </p>
+</div>
+<div class="flex items-center gap-1 bg-yellow-500/10 px-2 py-1 rounded-lg border border-yellow-500/20">
+<span class="text-gold text-xs">⭐</span>
+<span class="text-gold text-sm font-bold">4.9</span>
+<span class="text-text-secondary text-xs">(85)</span>
+</div>
+</div>
+<div class="h-px bg-white/5 my-1"></div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col">
+<span class="text-text-secondary text-xs">يبدأ السعر من</span>
+<span class="text-white text-lg font-bold font-display">75 <span class="text-sm font-medium text-text-secondary">ر.س</span></span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white text-sm font-bold py-2.5 px-6 rounded-full shadow-lg shadow-primary/25 transition-all active:scale-95">
+                        احجز الآن
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<nav class="fixed bottom-0 w-full bg-background-dark/90 backdrop-blur-lg border-t border-white/5 pb-5 pt-2 px-6 z-50">
+<div class="flex items-center justify-between">
+<button class="flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined text-[26px] fill-1">home</span>
+<span class="text-[10px] font-bold">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">calendar_month</span>
+<span class="text-[10px] font-medium">حجوزاتي</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+<span class="text-[10px] font-medium">المفضلة</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-[10px] font-medium">حسابي</span>
+</button>
+</div>
+</nav>
+
+</body></html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حجوزاتي - My Bookings</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1c1f26", // Custom surface color for cards
+                    },
+                    fontFamily: {
+                        "display": ["IBM Plex Sans Arabic", "Manrope", "sans-serif"],
+                        "body": ["IBM Plex Sans Arabic", "Manrope", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center">
+<!-- Mobile Container -->
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between p-4 pb-2 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<!-- Back Button -->
+<button class="flex size-10 items-center justify-center rounded-full text-slate-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_forward_ios</span>
+</button>
+<!-- Title -->
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">حجوزاتي</h2>
+<!-- Placeholder for symmetry (or profile) -->
+<div class="size-10"></div>
+</header>
+<!-- Tabs (Segmented Control) -->
+<div class="px-4 py-2 sticky top-[60px] z-10 bg-background-light dark:bg-background-dark">
+<div class="flex p-1 bg-gray-200 dark:bg-[#1c1f26] rounded-full">
+<!-- Active Tab -->
+<button class="flex-1 flex items-center justify-center py-2.5 rounded-full bg-white dark:bg-[#292e38] shadow-sm transition-all">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-normal">القادمة</p>
+</button>
+<!-- Inactive Tab -->
+<button class="flex-1 flex items-center justify-center py-2.5 rounded-full text-gray-500 dark:text-[#9ea7b7] hover:text-slate-900 dark:hover:text-white transition-all">
+<p class="text-inherit text-sm font-bold leading-normal">السابقة</p>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 flex flex-col gap-4 p-4 pb-24 overflow-y-auto">
+<!-- Card 1: Upcoming Confirmed -->
+<div class="flex flex-col gap-4 rounded-3xl bg-white dark:bg-[#1c1f26] p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<!-- Header: Status -->
+<div class="flex justify-between items-center border-b border-gray-100 dark:border-gray-800 pb-3">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+</span>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-wider">مؤكد</p>
+</div>
+<p class="text-gray-400 dark:text-[#9ea7b7] text-xs font-medium">رقم الحجز #٨٣٩٢</p>
+</div>
+<!-- Body: Salon Info -->
+<div class="flex items-start gap-4">
+<div class="h-16 w-16 shrink-0 rounded-full bg-cover bg-center border-2 border-white dark:border-[#292e38] shadow-md" data-alt="Modern barbershop logo with scissors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQJbWSN8WO_LFxA8OoQUpRR2aKIzU432R4dhdmbGFdOnDeSPJlerguZUqXB62u9e7zRcfK97-aSZTRO6u8xzzk0fT33XOgf8snRS1xUS8t2vKARVfW4ahgWbxAhgYjWgiPIqQAFydFpT6HVK9r8kPGIXEvV0OFvCe8DKwvVsosC-1a39_rupZgWH3cxGGCet6TfwH-1A81boB0rpOGs8WZDuBadLgVb60NEW09D7kvTv7igehLoCfT0nInyqQs0TM4dv7ORoosz3S7");'></div>
+<div class="flex flex-col gap-1 flex-1">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">صالون النخبة</h3>
+<p class="text-gray-500 dark:text-[#9ea7b7] text-sm font-medium">حلاقة شعر وذقن ملكية</p>
+<div class="flex items-center gap-2 mt-2 text-primary dark:text-blue-400">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="text-sm font-bold dir-ltr">اليوم - 08:00 PM</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs">شارع التحلية، الرياض</span>
+</div>
+</div>
+</div>
+<!-- Footer: Actions -->
+<div class="flex gap-3 mt-1 pt-2">
+<button class="flex-1 h-10 flex items-center justify-center rounded-full bg-primary hover:bg-blue-800 text-white text-sm font-bold transition-colors shadow-lg shadow-blue-900/20">
+<span class="material-symbols-outlined text-[18px] ml-2">near_me</span>
+                        الاتجاهات
+                    </button>
+<button class="h-10 px-6 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 text-slate-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#292e38] text-sm font-medium transition-colors">
+                        إلغاء
+                    </button>
+</div>
+</div>
+<!-- Card 2: Upcoming Soon -->
+<div class="flex flex-col gap-4 rounded-3xl bg-white dark:bg-[#1c1f26] p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<!-- Header: Status -->
+<div class="flex justify-between items-center border-b border-gray-100 dark:border-gray-800 pb-3">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+</span>
+<p class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">قريباً</p>
+</div>
+<p class="text-gray-400 dark:text-[#9ea7b7] text-xs font-medium">رقم الحجز #٩٠٢١</p>
+</div>
+<!-- Body: Salon Info -->
+<div class="flex items-start gap-4">
+<div class="h-16 w-16 shrink-0 rounded-full bg-cover bg-center border-2 border-white dark:border-[#292e38] shadow-md" data-alt="Abstract geometric dark logo for salon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCq261jQcMyGFUD8ULcBowp_ZzR_5odPbYUqw8tb-JKxnz2qXYmyHGRFHXB-EewNtLiaQTlMig8llNKa_8PKdbhluzVzqlD6EyS0TR4sYqbYnfpMYcqRk0AEizPbnnYJIUYJBlfTUm1_Q85oG4rieppIOPIDjv7BAdmRsK1gEF6_wX8_OnRKGBLBp6Hlbw4JJqcOe1Hm23KgcTUj2DWebR4RW6xaXRgsessIZKi5FOSIKCrT7PI6DDhn-kD-qao9RRHhxav3F-methZ");'></div>
+<div class="flex flex-col gap-1 flex-1">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">جنتل مان سبا</h3>
+<p class="text-gray-500 dark:text-[#9ea7b7] text-sm font-medium">جلسة مساج وعناية بالبشرة</p>
+<div class="flex items-center gap-2 mt-2 text-slate-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="text-sm font-bold dir-ltr">غداً - 10:00 AM</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs">طريق الملك فهد، الرياض</span>
+</div>
+</div>
+</div>
+<!-- Footer: Actions -->
+<div class="flex gap-3 mt-1 pt-2">
+<button class="flex-1 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#292e38] text-slate-900 dark:text-white hover:bg-gray-200 dark:hover:bg-[#363b47] text-sm font-bold transition-colors">
+                        عرض التفاصيل
+                    </button>
+</div>
+</div>
+<!-- Promotional Banner (Visual Interest) -->
+<div class="mt-2 relative w-full h-32 rounded-2xl overflow-hidden bg-gradient-to-r from-primary to-blue-900 flex items-center justify-between px-6 shadow-lg">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="z-10 flex flex-col gap-1">
+<p class="text-white font-bold text-lg">خصم ٢٠٪</p>
+<p class="text-blue-100 text-xs font-medium">على حجزك القادم</p>
+</div>
+<div class="z-10 h-10 w-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white">
+<span class="material-symbols-outlined">percent</span>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white dark:bg-[#111621] border-t border-gray-100 dark:border-[#1c1f26] pb-5 pt-3 px-6 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-gray-400 dark:text-[#9ea7b7] hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 dark:text-[#9ea7b7] hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">search</span>
+<span class="text-[10px] font-medium">بحث</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current">calendar_month</span>
+<span class="text-[10px] font-bold">حجوزاتي</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 dark:text-[#9ea7b7] hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium">حسابي</span>
+</a>
+</nav>
+</div>
+</body></html>

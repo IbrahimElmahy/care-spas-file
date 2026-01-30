@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Past Bookings</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1C2029",
+                        "surface-highlight": "#292e38",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 border-b border-gray-200 dark:border-white/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_forward</span>
+</button>
+<h1 class="text-xl font-bold leading-tight tracking-tight">حجوزاتي السابقة</h1>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-primary dark:text-white">
+<span class="material-symbols-outlined text-2xl">filter_list</span>
+</button>
+</div>
+</header>
+<!-- Filter Chips -->
+<div class="sticky top-[65px] z-40 bg-background-light dark:bg-background-dark pb-2 pt-2">
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar pb-2">
+<!-- Active Chip -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 transition-transform active:scale-95">
+<p class="text-white text-sm font-bold leading-normal">الكل</p>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-highlight border border-gray-200 dark:border-white/5 px-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">تمت الخدمة</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-highlight border border-gray-200 dark:border-white/5 px-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">ملغي</p>
+</button>
+</div>
+</div>
+<!-- Booking List -->
+<main class="flex-1 flex flex-col gap-5 p-4 pb-24">
+<!-- Card 1: Completed & Rated -->
+<article class="flex flex-col gap-4 bg-white dark:bg-surface-dark p-4 rounded-[1.5rem] shadow-sm border border-gray-100 dark:border-white/5">
+<!-- Header Row -->
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative size-14 shrink-0 overflow-hidden rounded-full border border-gray-100 dark:border-white/10">
+<img alt="Salon Logo" class="h-full w-full object-cover" data-alt="Barber shop logo with modern interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgCElEyMa5QRbBemBBE5n9fxaz-mpTIRWZQFBkuv3SoG7mrlDSda2bfh8S6lAzklbl36E6un2VnJ9vvXSlcg9ZRbmHCZ63MwucMTT40-ks3hq4G7ZnGmin9jkXEGEaLGvteAED0oUnF3nuzMmattLINVBFeanbzgG9Z4FG0Cb_QVgHie2sUeGn3YQWJKmBCaTwMYNgjo1U9YNkKLX48-jPr7jhf8Ueg-NQyEdxWx6aYCrF_t1t8i-rq9meL4E5g87P7wOT_gPu3rIr"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">صالون النخبة</h3>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-400 mt-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>15 أكتوبر - 04:00 م</span>
+</div>
+</div>
+</div>
+<!-- Price -->
+<div class="text-base font-bold text-primary dark:text-[#4d8eff]">
+                    150 ر.س
+                </div>
+</div>
+<!-- Service Details & Status -->
+<div class="flex flex-col gap-2 border-r-2 border-gray-200 dark:border-white/10 pr-3 mr-1">
+<p class="text-sm font-medium text-slate-700 dark:text-gray-300">حلاقة شعر ومساج وجه</p>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary dark:text-[#4d8eff]">
+<span class="material-symbols-outlined text-[14px] fill-current">check_circle</span>
+                        تمت الخدمة
+                    </span>
+<span class="text-xs text-slate-400 dark:text-gray-500">• رقم الحجز #8821</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-3 pt-2 border-t border-gray-100 dark:border-white/5">
+<button class="flex flex-1 h-10 items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    إعادة الحجز
+                </button>
+<button class="flex flex-1 h-10 items-center justify-center gap-2 rounded-full bg-transparent border border-gray-200 dark:border-white/10 text-slate-700 dark:text-gray-300 text-sm font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">star</span>
+                    تقييم الخدمة
+                </button>
+</div>
+</article>
+<!-- Card 2: Cancelled -->
+<article class="flex flex-col gap-4 bg-white dark:bg-surface-dark p-4 rounded-[1.5rem] shadow-sm border border-gray-100 dark:border-white/5 opacity-90">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative size-14 shrink-0 overflow-hidden rounded-full border border-gray-100 dark:border-white/10">
+<img alt="Barber Image" class="h-full w-full object-cover grayscale" data-alt="Barber working on a client beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlhaWHUspe7E69vjWNjPODGdvn2_D4C7XqrQGe50H2A4j1a16ZlOrnNKxMVz8MAQX851GsA3k4xkLQyU9ITqFj54_1TuqbaQyJ3l7CW9ZPTZpCe2Zhx09AqbofnVK3o1UOsUz47m6kKcE-Eb5wMVPsyGk1VajfR5LP7TS-w6DWhie_pBQENe_zCPd-H1famBJftOFT5NCwqmOBCMAcQnFvrVlNxE0bAiZoE8vj68CHAUvcMAJex7asBzh4SN-nV4uMMarUPnYdKxNs"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">ذا جنتل مان باربر</h3>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-400 mt-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>02 سبتمبر - 08:30 م</span>
+</div>
+</div>
+</div>
+<div class="text-base font-bold text-slate-400 dark:text-gray-500 line-through">
+                    60 ر.س
+                </div>
+</div>
+<div class="flex flex-col gap-2 border-r-2 border-gray-200 dark:border-white/10 pr-3 mr-1">
+<p class="text-sm font-medium text-slate-700 dark:text-gray-300">تحديد لحية فاخر</p>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-2.5 py-1 text-xs font-bold text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-[14px] fill-current">cancel</span>
+                        ملغي
+                    </span>
+</div>
+</div>
+<div class="flex gap-3 pt-2 border-t border-gray-100 dark:border-white/5">
+<button class="flex flex-1 h-10 items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    إعادة الحجز
+                </button>
+</div>
+</article>
+<!-- Card 3: Completed (Different Service) -->
+<article class="flex flex-col gap-4 bg-white dark:bg-surface-dark p-4 rounded-[1.5rem] shadow-sm border border-gray-100 dark:border-white/5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative size-14 shrink-0 overflow-hidden rounded-full border border-gray-100 dark:border-white/10">
+<img alt="Salon Interior" class="h-full w-full object-cover" data-alt="Modern luxury barber chair interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYcRJ8wf8sCMxduUU_bQWFDJqVrtmufKqN9VIhpQ2hGYtJVEzdYFlZceC8_KGa5tHlkXrSVw5x1wnIlz5bAxDKCiyqxf4gkYUYod-DRPSPA7_fhxVdcwlHZYGrobrlPanFeECwl1V9kjPyiShnu1Apu_LHyrT5qwiyZuw8Ir02QzQCTyaxFTJS0AElT3xLA3C7h6zM2HbQKLAZmjT6qK6eeONAgrojU3MB57eAJozqXX1STeaAeCCkyrW4wFjfknWAixmttydFo8ZZ"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">جولدن سيزر</h3>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-400 mt-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>20 أغسطس - 10:00 ص</span>
+</div>
+</div>
+</div>
+<div class="text-base font-bold text-primary dark:text-[#4d8eff]">
+                    250 ر.س
+                </div>
+</div>
+<div class="flex flex-col gap-2 border-r-2 border-gray-200 dark:border-white/10 pr-3 mr-1">
+<p class="text-sm font-medium text-slate-700 dark:text-gray-300">باكج العناية الكاملة (شعر + بشرة)</p>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary dark:text-[#4d8eff]">
+<span class="material-symbols-outlined text-[14px] fill-current">check_circle</span>
+                        تمت الخدمة
+                    </span>
+<!-- Rated Indicator -->
+<span class="inline-flex items-center gap-1 text-xs text-yellow-500 font-medium">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                        4.8
+                    </span>
+</div>
+</div>
+<div class="flex gap-3 pt-2 border-t border-gray-100 dark:border-white/5">
+<button class="flex flex-1 h-10 items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20 hover:bg-primary/90">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    إعادة الحجز
+                </button>
+</div>
+</article>
+<!-- Empty Space at bottom for scrolling past nav -->
+<div class="h-6"></div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-[#111317]/90 backdrop-blur-xl border-t border-gray-200 dark:border-white/5 pb-5 pt-3 px-6 z-50">
+<ul class="flex justify-between items-center">
+<li>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium">الرئيسية</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">search</span>
+<span class="text-[10px] font-medium">بحث</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-white transition-colors" href="#">
+<div class="bg-primary/10 dark:bg-white/10 px-4 py-1 rounded-full flex flex-col items-center">
+<span class="material-symbols-outlined text-2xl fill-current">calendar_month</span>
+</div>
+<span class="text-[10px] font-bold">حجوزاتي</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-medium">حسابي</span>
+</a>
+</li>
+</ul>
+</nav>
+</body></html>

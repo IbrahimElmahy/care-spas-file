@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stylek | ستايلك</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "card-dark": "#1c212e",
+                        "subtle-text": "#9ea7b7",
+                    },
+                    fontFamily: {
+                        "display": ["IBM Plex Sans Arabic", "Manrope", "sans-serif"],
+                        "numbers": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800/50">
+<div class="flex items-center justify-between p-4 h-16">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_forward</span>
+</button>
+<h1 class="text-lg font-bold">بحث</h1>
+<div class="w-10"></div>
+</div>
+<div class="px-4 pb-4">
+<div class="relative flex items-center w-full h-12 rounded-xl bg-white dark:bg-card-dark shadow-sm border border-gray-200 dark:border-gray-700/50 group focus-within:border-primary transition-all">
+<div class="flex items-center justify-center w-12 h-full text-subtle-text">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex-1 h-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-subtle-text text-base" placeholder="ابحث عن خدمة أو صالون..." type="text" value="قص شعر"/>
+<button class="flex items-center justify-center w-12 h-full text-subtle-text hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">cancel</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col w-full max-w-md mx-auto">
+<section class="flex flex-col items-center justify-center px-6 py-10 text-center animate-fade-in">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full transform scale-150"></div>
+<div class="relative w-32 h-32 rounded-full bg-gradient-to-br from-card-dark to-background-dark border border-gray-800 flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-6xl text-subtle-text/50">content_cut</span>
+<div class="absolute -bottom-1 -right-1 bg-background-dark rounded-full p-1.5 border border-gray-800">
+<span class="material-symbols-outlined text-2xl text-primary font-bold">search_off</span>
+</div>
+</div>
+</div>
+<h2 class="text-xl font-bold mb-3 leading-tight">
+                عذراً، لم نجد نتائج لـ <span class="text-primary">"قص شعر"</span>
+</h2>
+<p class="text-subtle-text text-sm mb-8 leading-relaxed max-w-[280px]">
+                حاول استخدام كلمات مختلفة، تأكد من الإملاء، أو قم بإزالة بعض الفلاتر.
+            </p>
+<button class="h-11 px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-medium text-sm transition-all shadow-lg shadow-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">filter_alt_off</span>
+<span>مسح جميع الفلاتر</span>
+</button>
+</section>
+<div class="w-full h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
+<section class="flex flex-col py-6 w-full overflow-hidden">
+<div class="px-5 mb-5 flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">مقترحات ستايلك</h3>
+<button class="text-xs font-medium text-primary hover:text-primary/80">عرض الكل</button>
+</div>
+<div class="flex overflow-x-auto no-scrollbar px-5 gap-4 pb-4 w-full snap-x snap-mandatory">
+<div class="snap-center shrink-0 w-[280px] flex flex-col gap-3 rounded-2xl bg-white dark:bg-card-dark p-3 shadow-md border border-gray-100 dark:border-gray-800/50">
+<div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-gray-800 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Interior of a modern luxury barber shop with leather chairs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBI6wBbxy7mhLsWcOfTMLWHRCXe7xMQuB4B_OGsw5q7NKfVqqrigJLGnRR59ip5pHwsyboZU8OS2hkgbkZeU_bvUBeBI5RE5yDdyO8uIVt714KQU4l2NaKhNuoFAbtl32NEoDhoZIkHmaGRTcaPTSw1J4J8J1YBbwXv1aEdT0qNKOq63wL6PQs09m7LPJ5bWp21ZsucWVJV_gDhhq4J8TnTi4jvHbiTuLeL0dIKMZBU6zd-egUfmNt1wBkdal_JFgqznzuVaQIEZPf6');"></div>
+<div class="absolute top-2 left-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm icon-filled">star</span>
+<span class="text-white text-xs font-bold font-numbers pt-0.5">4.9</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex justify-between items-start">
+<h4 class="text-base font-bold text-slate-900 dark:text-white truncate">صالون النخبة</h4>
+<span class="text-xs text-subtle-text bg-background-light dark:bg-white/5 px-2 py-1 rounded-md">الرياض</span>
+</div>
+<p class="text-xs text-subtle-text truncate">شارع التخصصي، حي المحمدية</p>
+</div>
+<button class="w-full h-10 mt-1 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2">
+<span>احجز الآن</span>
+</button>
+</div>
+<div class="snap-center shrink-0 w-[280px] flex flex-col gap-3 rounded-2xl bg-white dark:bg-card-dark p-3 shadow-md border border-gray-100 dark:border-gray-800/50">
+<div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-gray-800 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Classic barber chair in a dimly lit vintage style salon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARo8aaybL7i2xvFrfltxAOMI2KyFMEF6k3NCnZg1nmRFmY6uIZDO110j7W6uWegDpQKMPPsLQqVwxJCMskdmKsqFYvfUXLvc5LMf9wPGTAuVeQQuPIaxm-AdMYh4fylclpZWNSvvY9Bi1D6U5SLTg9M_n7edAvK83atEVNMeqMCFCePq3oLj78mE9x5UigUBFH0X5Xv0Ow2HoL2E_sJp4uSQSPRt9fEBROyrwGxvBdM044mnLSfN5bLtGBdII1EtP3om2Z96aG_pgx');"></div>
+<div class="absolute top-2 left-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm icon-filled">star</span>
+<span class="text-white text-xs font-bold font-numbers pt-0.5">4.8</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex justify-between items-start">
+<h4 class="text-base font-bold text-slate-900 dark:text-white truncate">جنتل مان لاونج</h4>
+<span class="text-xs text-subtle-text bg-background-light dark:bg-white/5 px-2 py-1 rounded-md">جدة</span>
+</div>
+<p class="text-xs text-subtle-text truncate">حي الروضة، طريق الملك</p>
+</div>
+<button class="w-full h-10 mt-1 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2">
+<span>احجز الآن</span>
+</button>
+</div>
+<div class="snap-center shrink-0 w-[280px] flex flex-col gap-3 rounded-2xl bg-white dark:bg-card-dark p-3 shadow-md border border-gray-100 dark:border-gray-800/50">
+<div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-gray-800 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of barber tools scissors and comb on a dark table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfSHt6qtBNcDm8ZyiuxKb51mUYgDafyeyHJZXlvp21fLhj5Hguq1Be5qQFvk4w7WNE68_KlrLnMIykdra2bqElZK7etra3QftuWGq9PIC96vnG4PQfHmGnudx8s3rehEZ2z2wBZRRWGfAli78yVahvO0PiZyGJnF2XbeqbvLuXASQoreY41FSbTS5KjO679bwLCASLTNCf9UI1xG1MrPa7N-BwHdHKGwVmhf6c9gQWYxPk9qhyPfEFM6FdotNEl5Sts2ViHIF7ngGS');"></div>
+<div class="absolute top-2 left-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm icon-filled">star</span>
+<span class="text-white text-xs font-bold font-numbers pt-0.5">4.7</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex justify-between items-start">
+<h4 class="text-base font-bold text-slate-900 dark:text-white truncate">الحلاق الملكي</h4>
+<span class="text-xs text-subtle-text bg-background-light dark:bg-white/5 px-2 py-1 rounded-md">الدمام</span>
+</div>
+<p class="text-xs text-subtle-text truncate">الواجهة البحرية، الكورنيش</p>
+</div>
+<button class="w-full h-10 mt-1 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2">
+<span>احجز الآن</span>
+</button>
+</div>
+<div class="w-2 shrink-0"></div>
+</div>
+</section>
+</main>
+<div class="h-6 w-full bg-background-light dark:bg-background-dark"></div>
+
+</body></html>

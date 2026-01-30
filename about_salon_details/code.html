@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Salon Details - Stylek</title>
+<!-- Google Fonts: Manrope for English numbers/text, Almarai for Arabic text -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Almarai:wght@300;400;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "primary-dark": "#c29206",
+                        "background-light": "#f8f8f5", // Fallback for light mode if ever used
+                        "background-dark": "#0f172a", // Deep Navy Blue requested
+                        "surface-dark": "#1e293b", // Slightly lighter navy for cards
+                        "text-secondary": "#94a3b8", // Muted slate for body text
+                    },
+                    fontFamily: {
+                        "display": ["Almarai", "Manrope", "sans-serif"],
+                        "body": ["Almarai", "Manrope", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "0.75rem", 
+                        "xl": "1rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        /* Ensure RTL layout behaves correctly */
+        body {
+            text-align: right;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-black">
+<div class="relative flex min-h-screen w-full flex-col mx-auto max-w-md bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="fixed top-0 w-full max-w-md z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 transition-colors">
+<div class="flex items-center justify-between px-4 h-16">
+<!-- Back Button (RTL: Arrow Right usually acts as back in Arabic interfaces depending on OS, but commonly arrow_forward implies 'go back' to previous screen which is on the right) -->
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+<h1 class="text-lg font-bold text-center flex-1 truncate px-2">تفاصيل الصالون</h1>
+<div class="flex gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[24px]">favorite_border</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[24px]">share</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content (Scrollable) -->
+<main class="flex-1 pt-16 pb-24 overflow-y-auto">
+<!-- Map Preview Section -->
+<div class="relative w-full h-64 bg-surface-dark overflow-hidden group">
+<!-- Static Map Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay" data-alt="Minimalist dark map showing city streets of Riyadh" data-location="Riyadh" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3YbDj-VfaaLpUn5ZZFlwMPkfrwveO5yDEE25d7hFa2i5ZjWS8vZniqgEaWB1HCwvNjn_m1gn9qyqwh9pP31iXwe79QB12bmU2aH1PaIJ83L2arncud0ARC2M9HCWa5_E_fX8lVvhXZ4KHLnBO5Qaj6SKdKnrjmvCq4FfHyuytz8Bh3h2cbEfNmuAoenHMrwCVUriX-8KrtPce_rRWZRteK2Yax4uJKfjx8ZvUfmB_q4zctfqKW785W4qDnhA7dg1c8TPx5BDZERLN");'>
+</div>
+<!-- Dark Gradient Overlay for text legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent"></div>
+<!-- Map Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center drop-shadow-lg">
+<span class="material-symbols-outlined text-primary text-5xl fill-1">location_on</span>
+<div class="w-3 h-1 bg-black/50 blur-[2px] rounded-full mt-[-4px]"></div>
+</div>
+<!-- Salon Basic Info Overlay -->
+<div class="absolute bottom-0 w-full p-5 flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary text-black text-xs font-bold px-2 py-0.5 rounded-full">مفتوح الآن</span>
+<div class="flex items-center gap-1 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-primary text-[14px] filled">star</span>
+<span class="text-white text-xs font-bold font-display">4.9</span>
+<span class="text-gray-300 text-[10px]">(1.2k تقييم)</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold text-white leading-tight">صالون الحلاق الملكي</h2>
+<p class="text-gray-300 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span>
+                        الرياض، طريق الملك فهد، العليا
+                    </p>
+</div>
+</div>
+<!-- Tabs -->
+<div class="sticky top-16 z-40 bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between px-4">
+<button class="flex-1 py-4 text-primary font-bold text-sm border-b-2 border-primary transition-colors">
+                        عن الصالون
+                    </button>
+<button class="flex-1 py-4 text-text-secondary hover:text-slate-900 dark:hover:text-white font-medium text-sm border-b-2 border-transparent transition-colors">
+                        الخدمات
+                    </button>
+<button class="flex-1 py-4 text-text-secondary hover:text-slate-900 dark:hover:text-white font-medium text-sm border-b-2 border-transparent transition-colors">
+                        المراجعات
+                    </button>
+</div>
+</div>
+<div class="px-5 py-6 space-y-8">
+<!-- Description Section -->
+<section>
+<div class="flex items-center gap-2 mb-3 text-primary">
+<span class="material-symbols-outlined">storefront</span>
+<h3 class="text-lg font-bold text-white">الوصف</h3>
+</div>
+<p class="text-text-secondary text-base leading-relaxed text-justify">
+                        استمتع بأرقى تجربة حلاقة في الرياض. يقدم صالون الحلاق الملكي خدمات العناية الشخصية الفاخرة للرجال بأسلوب عصري يمزج بين التقاليد والاحترافية. نستخدم أفضل المنتجات العالمية لضمان رضاكم التام.
+                    </p>
+<button class="mt-2 text-primary text-sm font-bold flex items-center gap-1 hover:text-primary-dark transition-colors">
+                        قراءة المزيد
+                        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</section>
+<!-- Working Hours Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">schedule</span>
+<h3 class="text-lg font-bold text-white">ساعات العمل</h3>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl p-4 border border-slate-700/50 space-y-3">
+<!-- Grid Layout for Hours -->
+<div class="grid grid-cols-2 gap-y-3 text-sm">
+<div class="text-white font-medium">الأحد - الخميس</div>
+<div class="text-text-secondary text-left font-display" dir="ltr">10:00 AM - 10:00 PM</div>
+<div class="text-white font-medium">الجمعة</div>
+<div class="text-text-secondary text-left font-display" dir="ltr">02:00 PM - 11:00 PM</div>
+<div class="text-white font-medium">السبت</div>
+<div class="text-text-secondary text-left font-display" dir="ltr">12:00 PM - 10:00 PM</div>
+</div>
+</div>
+</section>
+<!-- Location Details Section -->
+<section>
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">map</span>
+<h3 class="text-lg font-bold text-white">الموقع</h3>
+</div>
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-slate-700/50">
+<div class="h-32 w-full bg-slate-800 relative">
+<!-- Small embedded map preview -->
+<div class="w-full h-full bg-cover bg-center grayscale opacity-80" data-alt="Map snippet showing location pins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpuNHLXJpFe-NpQdYIxOXSamm0hizaTCINT9PmqFcg8usDNw8hqHVdghp3RT7wy2cwhlB1hAGofm_UVH5LUBCQauX9Tf7KbWgHF4JknzgX_D2-g7mrSBwb5Vlgtin7vQOEt0vthrQoZisrj9IrJMwrLjZ3OJe6gDzymkpGrfZ17iRj9OQ0RkoX8Djg1g9DFymXYrTYT3OUsHK7lK6cQ-UN60qgLsteFpb-X-qZA6MJ1bwI0vQswaK_v4d3y0rHIlzZi54ukxgjpwUJ");'>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl drop-shadow-md">location_on</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="text-white font-bold mb-1">الرياض، حي العليا</h4>
+<p class="text-text-secondary text-sm mb-4">شارع التحلية، بجوار برج المملكة، الدور الثاني.</p>
+<button class="w-full h-12 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all rounded-lg flex items-center justify-center gap-2 text-slate-900 font-bold text-base shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">directions</span>
+                                احصل على الاتجاهات
+                            </button>
+</div>
+</div>
+</section>
+<!-- Amenities/Features Horizontal Scroll -->
+<section>
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">diamond</span>
+<h3 class="text-lg font-bold text-white">المميزات</h3>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 no-scrollbar">
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-24 h-24 bg-surface-dark border border-slate-700/50 rounded-xl gap-2">
+<span class="material-symbols-outlined text-white text-3xl">wifi</span>
+<span class="text-text-secondary text-xs">واي فاي مجاني</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-24 h-24 bg-surface-dark border border-slate-700/50 rounded-xl gap-2">
+<span class="material-symbols-outlined text-white text-3xl">local_cafe</span>
+<span class="text-text-secondary text-xs">قهوة مجانية</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-24 h-24 bg-surface-dark border border-slate-700/50 rounded-xl gap-2">
+<span class="material-symbols-outlined text-white text-3xl">payments</span>
+<span class="text-text-secondary text-xs">دفع إلكتروني</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center justify-center w-24 h-24 bg-surface-dark border border-slate-700/50 rounded-xl gap-2">
+<span class="material-symbols-outlined text-white text-3xl">ac_unit</span>
+<span class="text-text-secondary text-xs">تكييف</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom CTA Sticky -->
+<div class="fixed bottom-0 w-full max-w-md p-4 bg-surface-dark border-t border-slate-700/50 z-50">
+<button class="w-full h-14 bg-white text-slate-900 hover:bg-gray-100 active:scale-[0.98] transition-all rounded-xl font-bold text-lg shadow-lg flex items-center justify-center gap-2">
+                حجز موعد الآن
+            </button>
+</div>
+</div>
+</body></html>

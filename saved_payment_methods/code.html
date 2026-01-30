@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saved Payment Methods</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "primary-dim": "#b58a0a",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0B1221", /* Deep Navy */
+                        "surface-dark": "#162032", /* Lighter Navy for cards */
+                        "surface-highlight": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Radio Styles for Gold Accent */
+        input[type="radio"]:checked + div {
+            border-color: #f2b90d;
+            background-color: rgba(242, 185, 13, 0.05);
+        }
+        input[type="radio"]:checked + div .radio-indicator {
+            border-color: #f2b90d;
+            background-color: #f2b90d;
+            box-shadow: 0 0 0 4px rgba(242, 185, 13, 0.2);
+        }
+        input[type="radio"]:checked + div .radio-dot {
+            opacity: 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary selection:text-black">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+<div class="flex items-center justify-between px-4 py-4 max-w-md mx-auto w-full">
+<!-- Back Button (RTL: Points Right) -->
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_forward</span>
+</button>
+<!-- Title -->
+<h1 class="text-lg font-bold tracking-tight text-center flex-1">طرق الدفع</h1>
+<!-- Edit Button -->
+<button class="text-primary font-bold text-sm hover:text-primary-dim transition-colors px-2">
+                تعديل
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 pt-24 pb-32 px-4 max-w-md mx-auto w-full flex flex-col gap-6">
+<!-- Section Header -->
+<div class="flex flex-col gap-1">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">البطاقات المحفوظة</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">اختر طريقة الدفع الافتراضية لحجوزاتك القادمة</p>
+</div>
+<!-- Payment Methods List -->
+<form class="flex flex-col gap-4">
+<!-- Apple Pay Option -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="payment_method" type="radio" value="apple_pay"/>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-surface-dark border-2 border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all duration-300 shadow-sm">
+<!-- Icon -->
+<div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-white text-2xl">phone_iphone</span>
+</div>
+<!-- Text Info -->
+<div class="flex flex-col flex-1">
+<span class="font-bold text-base text-slate-900 dark:text-white">Apple Pay</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">الافتراضي</span>
+</div>
+<!-- Radio Indicator -->
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all duration-300 group-hover:border-primary">
+<div class="radio-dot w-2.5 h-2.5 bg-background-dark rounded-full opacity-0 transition-opacity"></div>
+</div>
+</div>
+</label>
+<!-- Mada Option -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="payment_method" type="radio" value="mada"/>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-surface-dark border-2 border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all duration-300 shadow-sm">
+<!-- Icon (Mada uses specific branding, generic card here for layout) -->
+<div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+<div class="relative w-8 h-5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded flex items-center justify-center" data-alt="Mada Card Icon">
+<span class="text-[8px] font-bold text-white tracking-tighter">mada</span>
+</div>
+</div>
+<!-- Text Info -->
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-base text-slate-900 dark:text-white">مدى</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-mono">**** 1234</span>
+</div>
+<span class="text-xs text-slate-500 dark:text-slate-400">تنتهي في 12/25</span>
+</div>
+<!-- Radio Indicator -->
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all duration-300 group-hover:border-primary">
+<div class="radio-dot w-2.5 h-2.5 bg-background-dark rounded-full opacity-0 transition-opacity"></div>
+</div>
+</div>
+</label>
+<!-- Visa Option -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="payment_method" type="radio" value="visa"/>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-surface-dark border-2 border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all duration-300 shadow-sm">
+<!-- Icon -->
+<div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+<div class="flex -space-x-1 space-x-reverse" data-alt="Credit Card Icon">
+<div class="w-4 h-4 rounded-full bg-red-500/80"></div>
+<div class="w-4 h-4 rounded-full bg-yellow-500/80"></div>
+</div>
+</div>
+<!-- Text Info -->
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-base text-slate-900 dark:text-white">فيزا</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-mono">**** 8899</span>
+</div>
+<span class="text-xs text-slate-500 dark:text-slate-400">تنتهي في 09/24</span>
+</div>
+<!-- Radio Indicator -->
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all duration-300 group-hover:border-primary">
+<div class="radio-dot w-2.5 h-2.5 bg-background-dark rounded-full opacity-0 transition-opacity"></div>
+</div>
+</div>
+</label>
+<!-- Cash Option -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="payment_method" type="radio" value="cash"/>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-surface-dark border-2 border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all duration-300 shadow-sm">
+<!-- Icon -->
+<div class="w-12 h-12 rounded-xl bg-emerald-900/20 flex items-center justify-center shrink-0 border border-emerald-900/10">
+<span class="material-symbols-outlined text-emerald-500 text-2xl">payments</span>
+</div>
+<!-- Text Info -->
+<div class="flex flex-col flex-1">
+<span class="font-bold text-base text-slate-900 dark:text-white">الدفع في الصالون</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">نقداً أو شبكة</span>
+</div>
+<!-- Radio Indicator -->
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center transition-all duration-300 group-hover:border-primary">
+<div class="radio-dot w-2.5 h-2.5 bg-background-dark rounded-full opacity-0 transition-opacity"></div>
+</div>
+</div>
+</label>
+</form>
+<!-- Add New Card Button -->
+<button class="w-full mt-4 flex items-center justify-center gap-2 rounded-full h-14 border border-primary text-primary hover:bg-primary hover:text-black transition-all duration-300 font-bold text-base group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">add_card</span>
+<span>إضافة بطاقة جديدة</span>
+</button>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-background-light dark:bg-[#0f1623] border-t border-slate-200 dark:border-slate-800 pb-safe pt-2">
+<div class="flex justify-around items-end max-w-md mx-auto w-full px-2 pb-2">
+<!-- Home -->
+<a class="flex flex-col items-center gap-1 group flex-1" href="#">
+<div class="w-12 h-8 flex items-center justify-center rounded-full group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">home</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">الرئيسية</span>
+</a>
+<!-- Appointments -->
+<a class="flex flex-col items-center gap-1 group flex-1" href="#">
+<div class="w-12 h-8 flex items-center justify-center rounded-full group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">calendar_month</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">المواعيد</span>
+</a>
+<!-- Favorites -->
+<a class="flex flex-col items-center gap-1 group flex-1" href="#">
+<div class="w-12 h-8 flex items-center justify-center rounded-full group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">favorite</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">المفضلة</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center gap-1 group flex-1" href="#">
+<div class="w-12 h-8 flex items-center justify-center rounded-full bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary fill-current" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<span class="text-[10px] font-bold text-primary transition-colors">حسابي</span>
+</a>
+</div>
+<!-- Safe Area Spacer for iOS Home Indicator -->
+<div class="h-5 w-full"></div>
+</nav>
+</body></html>

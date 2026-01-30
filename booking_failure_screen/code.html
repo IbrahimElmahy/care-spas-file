@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Failure - Stylek</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1a2233",
+                        "error-red": "#CF6679",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans Arabic", "Manrope", "sans-serif"],
+                        "body": ["Noto Sans Arabic", "Manrope", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center font-display antialiased selection:bg-primary/30">
+<div class="relative w-full max-w-md h-full flex flex-col justify-between min-h-[100dvh] px-6 py-8 overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[50vh] bg-gradient-to-b from-[#1a202c] to-transparent opacity-40 pointer-events-none z-0"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full pointer-events-none z-0"></div>
+<div class="flex-1"></div>
+<div class="relative z-10 flex flex-col items-center w-full text-center space-y-6 animate-fade-in-up">
+<div class="relative group">
+<div class="absolute inset-0 bg-error-red/20 blur-xl rounded-full transform scale-150 transition-transform duration-700 group-hover:scale-175"></div>
+<div class="relative w-24 h-24 bg-surface-dark border border-white/5 rounded-full flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-5xl text-error-red animate-pulse" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                        error
+                    </span>
+</div>
+</div>
+<div class="space-y-3 max-w-[90%] mx-auto">
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight leading-tight">
+                عذراً، فشلت عملية الحجز
+            </h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-relaxed">
+                حدث خطأ أثناء معالجة الدفع في Stylek | ستايلك. يرجى التأكد من رصيد المحفظة أو صلاحية البطاقة المستخدمة.
+            </p>
+</div>
+<div class="w-full bg-white dark:bg-surface-dark/50 border border-slate-200 dark:border-white/5 rounded-xl p-4 mt-6 backdrop-blur-sm">
+<div class="flex justify-between items-center text-sm border-b border-dashed border-slate-200 dark:border-white/10 pb-3 mb-3">
+<span class="text-slate-500 dark:text-slate-400">رقم العملية</span>
+<span class="font-mono text-slate-700 dark:text-slate-300">#TRX-93821</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-500 dark:text-slate-400">التاريخ</span>
+<span class="font-mono text-slate-700 dark:text-slate-300 text-xs">24 أكتوبر، 10:30 ص</span>
+</div>
+</div>
+</div>
+<div class="flex-1"></div>
+<div class="relative z-10 w-full space-y-4 pt-8">
+<button class="w-full h-12 flex items-center justify-center bg-primary hover:bg-primary/90 active:bg-primary/80 text-white text-base font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-primary/25 ring-1 ring-white/10">
+<span>إعادة المحاولة</span>
+<span class="material-symbols-outlined mr-2 text-[20px]">refresh</span>
+</button>
+<button class="w-full h-12 flex items-center justify-center bg-transparent hover:bg-white/5 text-slate-600 dark:text-slate-300 text-base font-medium rounded-lg transition-colors duration-200 border border-slate-200 dark:border-white/10">
+<span>العودة للرئيسية</span>
+</button>
+<div class="pt-4 pb-2 text-center">
+<a class="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span class="underline decoration-slate-600 underline-offset-4">تواصل مع دعم Stylek | ستايلك</span>
+</a>
+</div>
+</div>
+</div>
+<style>
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+
+</body></html>

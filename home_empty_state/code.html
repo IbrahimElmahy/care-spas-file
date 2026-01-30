@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Empty State - Salon App</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Noto+Sans+Arabic:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans Arabic', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Top App Bar -->
+<div class="fixed top-0 w-full z-20 bg-background-dark/95 backdrop-blur-md border-b border-white/5">
+<div class="flex items-center justify-between px-4 py-3 h-16">
+<!-- Location Selector (Right side in RTL) -->
+<div class="flex items-center gap-2 cursor-pointer group">
+<div class="flex items-center justify-center size-10 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-xs text-slate-400 font-medium leading-none mb-1">الموقع الحالي</span>
+<div class="flex items-center gap-1">
+<h2 class="text-white text-base font-bold leading-none">الخرج</h2>
+<span class="material-symbols-outlined text-slate-400 text-lg">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Profile Icon (Left side in RTL) -->
+<button class="size-10 rounded-full overflow-hidden border-2 border-white/10 hover:border-primary/50 transition-colors relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWQKh1EnwlWo4ZqfDveYAMwBAD-u90jsZgBwfsRTanQ6usnXmIMGHGYezdSNgq7-6QzpZR2TcYn8DgXZvAAz3OmJ16vug13eg4xOcAPHDI0fR55lBVa5saU5mqe_AI0DksyLRsBTI0uC1cEM8ptwXhvtAN5uHYzBCBIneehai7o_RlzKXshE-_bMLpHH6ZaW_ktmLvMJcsdRLczOWWPH9AaeV-R2vfmAyfoihO4_MGnBXojHPblwOeiPet6WNqUBWb3Ijy3T8wFQEj');"></div>
+</button>
+</div>
+</div>
+<!-- Main Content: Empty State -->
+<div class="flex-1 flex flex-col justify-center items-center px-6 pb-24 pt-20 w-full max-w-md mx-auto relative z-10">
+<!-- Illustration Container -->
+<div class="w-full aspect-square max-w-[320px] mb-8 relative flex items-center justify-center">
+<!-- Background Glow -->
+<div class="absolute inset-0 bg-primary/20 blur-[60px] rounded-full transform scale-75"></div>
+<!-- Main Illustration Image -->
+<div class="relative w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Minimalist line art illustration of an empty modern barber chair in a dark room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhybj4DnO0q94bJiA3QdSebZIhv8KCFnX1y_PD2lfaBTEwbPxkryp0sRvxB5TiB6AJSYurkA_Gp3K1KaiugYtrNyIMAnBlqLfEeSRgkL68ZxbyL_eOmNWAbEhNKMipLU4CqfNgW4MXTqUnN6yxMFdAn8H3q21EwHPh58EmqGeMNMDLYIXByWEX_xyMynDzIjBcg18gEggxBtzO3vIITR8aZR0tP6I5guMz_e1bFwu4TLibWvS2Kq5oxWwgWLOG7pWygsOmyNW8mdpy');">
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center text-center gap-3 mb-8 animate-fade-in-up">
+<h1 class="text-white text-2xl font-bold leading-tight tracking-tight">
+                لا توجد صالونات متاحة<br/>في منطقتك حالياً
+            </h1>
+<p class="text-slate-400 text-sm font-normal leading-relaxed max-w-[32ch]">
+                نحن نعمل بجد لتوسيع شبكتنا لتشمل مدينتك قريباً. يمكنك تجربة البحث في مدينة أخرى.
+            </p>
+</div>
+<!-- Action Button -->
+<button class="w-full max-w-[280px] h-14 bg-primary hover:bg-primary/90 active:scale-95 transition-all duration-200 rounded-full flex items-center justify-center gap-2 shadow-lg shadow-primary/25 group">
+<span class="text-white text-base font-bold">تغيير المدينة</span>
+<span class="material-symbols-outlined text-white transition-transform group-hover:-translate-x-1">arrow_back</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 w-full z-20 bg-[#1c1f26] border-t border-[#292e38] pb-safe pt-2">
+<div class="flex justify-around items-center h-16 px-2">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center gap-1 w-16 text-primary group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[28px] group-hover:scale-110 transition-transform fill-1">home</span>
+<span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></span>
+</div>
+<span class="text-[10px] font-bold mt-1">الرئيسية</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center justify-center gap-1 w-16 text-[#9ea7b7] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="text-[10px] font-medium mt-1">حجوزاتي</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center gap-1 w-16 text-[#9ea7b7] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-[26px] group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-medium mt-1">حسابي</span>
+</a>
+</div>
+<!-- Safe area padding for newer iPhones -->
+<div class="h-5 w-full"></div>
+</div>
+</body></html>

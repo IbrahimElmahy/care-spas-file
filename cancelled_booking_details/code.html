@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cancelled Booking Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Sans+Arabic:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1c1e24",
+                        "surface-border": "#2a2f3a",
+                        "status-error": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans Arabic', sans-serif;
+        }
+        /* Custom scrollbar hide for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col overflow-x-hidden pb-24">
+<!-- Top App Bar -->
+<header class="flex items-center px-4 py-3 sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-transparent dark:border-white/5">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full active:bg-black/5 dark:active:bg-white/10 transition-colors cursor-pointer text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight">تفاصيل الحجز</h1>
+<div class="flex size-10 shrink-0 items-center justify-center">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-bold leading-normal" href="#">مساعدة</a>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col gap-6 px-4 py-6">
+<!-- Status Section (Hero) -->
+<div class="flex flex-col items-center gap-4 py-4">
+<div class="size-20 rounded-full bg-status-error/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-status-error text-[40px]">event_busy</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">تم إلغاء الحجز</h2>
+<div class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-status-error/10 border border-status-error/20">
+<span class="text-xs font-bold text-status-error">ملغى</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm dir-ltr">Ref: #882910</p>
+</div>
+</div>
+<!-- Service Details Card -->
+<section class="flex flex-col gap-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white px-1">تفاصيل الخدمة</h3>
+<div class="flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-surface-border overflow-hidden shadow-sm">
+<!-- Salon Header Image & Info -->
+<div class="flex p-4 gap-4">
+<div class="relative w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Interior of a classic barbershop with leather chairs" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrMuPY8J3F-RGm_enFJEq6xaGgtibbncMcorDXkfns0V2_PC4tpWDB5YVx9mJdASrxBVRLYjDv6miwX8xT9qpIKNXqgtAkAC8sZNVI3AvRmdj3-JLI0sCSzS96ioaKH7UmeOa-_M1l3DMj-atdtcLt3wjPTo8qbL0LFFJ8AkSUBW085Bzgaw6txC0Kj-hkcwShwQzY4KHrAzYSlCeXqQNDN898IVjuhQvpmL-P_isbnM2g8vusOy9d58BNIi6EjuINbfOI__8DzFYD');"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-wide mb-1">صالون</p>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">صالون جنتلمان</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                الرياض، حي العليا
+                            </p>
+</div>
+</div>
+</div>
+<div class="h-px w-full bg-slate-100 dark:bg-surface-border"></div>
+<!-- Specific Booking Details -->
+<div class="p-4 flex flex-col gap-4">
+<!-- Service Item -->
+<div class="flex items-start justify-between gap-4">
+<div class="flex gap-3">
+<div class="mt-0.5 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">content_cut</span>
+</div>
+<div>
+<p class="text-base font-bold text-slate-900 dark:text-white">قص شعر ولحية بريميوم</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">مدة ٤٥ دقيقة</p>
+</div>
+</div>
+<p class="text-base font-bold text-slate-900 dark:text-white shrink-0">١٥٠ ر.س</p>
+</div>
+<!-- Date Item -->
+<div class="flex items-start gap-3">
+<div class="mt-0.5 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div>
+<p class="text-base font-medium text-slate-900 dark:text-white">الخميس، ٢٤ أكتوبر</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">٠٤:٠٠ مساءً - ٠٤:٤٥ مساءً</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional / Staff -->
+<section class="flex flex-col gap-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white px-1">المحترف</h3>
+<div class="flex items-center justify-between rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-surface-border p-4 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-surface-border" data-alt="Portrait of Ahmed Al-Farsi, the barber" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBs44bZAoaGHRrYFZDHQ3SfiuqvXR6NxT0D7fy69YkPXaph9cN6xOCjIYeO1BO0Rgtub-VMyaUrPwCDbjXsA0RC74Jqf7nAEaqH9NXYw-r4BW-vsiGzxHGRCUYRO01E9CNKp_c4m1IGhnl5_VPBW0Q9QBl7eqeM6_Xv5cKREDW-9fd8ExyBu3qHdMu6_uhrPBjVUWebSVstUIjGsMfGU2n8iQDM3pLYOfMBtOoDg-wiPWxAHbhrn7QI7txzsQYRdo69J8RgLYptAJ3_');"></div>
+<div class="flex flex-col">
+<p class="text-base font-bold text-slate-900 dark:text-white">أحمد الفارسي</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">مصفف شعر رئيسي</p>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-background-light dark:bg-background-dark px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-yellow-500 text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">4.9</span>
+</div>
+</div>
+</section>
+<!-- Refund Information (ActionPanel) -->
+<section class="flex flex-col gap-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white px-1">معلومات الدفع</h3>
+<div class="rounded-xl border border-slate-200 dark:border-surface-border bg-slate-50 dark:bg-surface-dark/50 p-5">
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 text-primary">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-base font-bold text-slate-900 dark:text-white">حالة الاسترداد</p>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                                تم البدء في استرداد مبلغ <span class="text-slate-900 dark:text-white font-bold">١٥٠ ر.س</span> إلى بطاقتك المنتهية بـ ٨٨٢١. قد تستغرق العملية من ٣ إلى ٥ أيام عمل بنكية.
+                            </p>
+</div>
+</div>
+<div class="h-px w-full bg-slate-200 dark:bg-surface-border"></div>
+<a class="flex items-center justify-between group" href="#">
+<span class="text-sm font-bold text-primary group-hover:underline">تتبع الاسترداد</span>
+<span class="material-symbols-outlined text-primary text-lg transform group-hover:-translate-x-1 transition-transform rtl:rotate-180">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-white/5 backdrop-blur-xl z-40">
+<div class="w-full max-w-md mx-auto">
+<button class="w-full h-14 bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all rounded-full flex items-center justify-center gap-2 text-white shadow-lg shadow-primary/25">
+<span class="text-base font-bold tracking-wide">حجز مرة أخرى</span>
+</button>
+</div>
+</div>
+</body></html>

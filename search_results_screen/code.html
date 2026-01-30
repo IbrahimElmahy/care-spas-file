@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "surface-dark": "#1e2430", // Slightly lighter for cards
+                        "surface-darker": "#151a25", // Input backgrounds
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden min-h-screen pb-24">
+<!-- Top App Bar & Search -->
+<div class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-white/5 pb-2">
+<div class="flex items-center justify-between p-4 gap-4">
+<!-- Back Button -->
+<button class="flex items-center justify-center size-10 rounded-full bg-surface-darker hover:bg-white/10 text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-2xl">arrow_forward</span>
+</button>
+<!-- Search Bar -->
+<div class="flex-1 relative group">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="w-full h-12 bg-surface-darker border-none rounded-full pr-10 pl-10 text-white placeholder-gray-500 focus:ring-2 focus:ring-primary focus:bg-surface-dark transition-all text-base" placeholder="ابحث عن صالون أو خدمة..." type="text" value="حلاقة ذقن"/>
+<div class="absolute inset-y-0 left-0 flex items-center pl-3">
+<button class="p-1 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+<!-- Map View Toggle -->
+<button class="flex items-center justify-center size-10 rounded-full bg-surface-darker hover:bg-white/10 text-white transition-colors shrink-0">
+<span class="material-symbols-outlined">map</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 px-4 pb-2 overflow-x-auto no-scrollbar items-center">
+<!-- Main Filter Button -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 px-4 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="text-sm font-bold">تصفية</span>
+</button>
+<div class="w-[1px] h-6 bg-white/10 shrink-0 mx-1"></div>
+<!-- Active Chip -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4 border border-primary active:scale-95 transition-transform shadow-[0_0_15px_rgba(22,67,156,0.3)]">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span class="text-sm font-medium">الأقرب</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark text-gray-300 border border-transparent px-4 hover:bg-surface-dark/80 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-sm font-medium">تقييم عالي</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark text-gray-300 border border-transparent px-4 hover:bg-surface-dark/80 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="text-sm font-medium">مفتوح الآن</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark text-gray-300 border border-transparent px-4 hover:bg-surface-dark/80 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">attach_money</span>
+<span class="text-sm font-medium">السعر</span>
+</button>
+</div>
+</div>
+<!-- Results Count -->
+<div class="px-4 py-4 flex justify-between items-end">
+<h2 class="text-lg font-bold text-white">١٢ نتيجة لـ "حلاقة ذقن"</h2>
+<span class="text-sm text-gray-400">الرياض</span>
+</div>
+<!-- Results List -->
+<div class="flex flex-col gap-4 px-4">
+<!-- Card 1 -->
+<div class="group flex flex-col sm:flex-row items-stretch gap-4 rounded-xl bg-surface-dark p-3 shadow-sm border border-white/5 hover:border-primary/30 transition-all">
+<!-- Image Section -->
+<div class="w-full sm:w-32 h-40 sm:h-auto shrink-0 relative rounded-lg overflow-hidden">
+<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-md flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs font-bold text-white">4.9</span>
+<span class="text-[10px] text-gray-300">(120)</span>
+</div>
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Luxury barber shop interior with leather chairs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_9pBl1aO3FuOice45AX8srFVJ22IMLh5CF8o99ID6wRXmpdNma-UqhzaBmWfh0D7UlXBPc8tr9Jz6sjnGM3NjKVGG7H5a5SlfacRu2gayEAxlYOarclV-nsYRR95J7xQv0PLzcLFu4woJSnaDfHZ72HuJ7O08WMeAIXml6mqQgHfQtfaSj8a0KAx8Nenhfwd_Hx1qAdmBvghE606eqFXkFxucgnNShVR_mVN2eEY6tXProbpgp_vHMZbINGVF7BtE6omBqKipuktz");'>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-white leading-tight mb-1">صالون الملكي</h3>
+<div class="flex items-center gap-1 text-gray-400 text-xs bg-white/5 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>1.2 كم</span>
+</div>
+</div>
+<p class="text-gray-400 text-sm font-normal line-clamp-1">شارع التحلية، حي السليمانية</p>
+<!-- Tags -->
+<div class="flex gap-2 mt-3 flex-wrap">
+<span class="px-2 py-1 rounded-md bg-white/5 text-[10px] text-gray-300">حلاقة شعر</span>
+<span class="px-2 py-1 rounded-md bg-white/5 text-[10px] text-gray-300">عناية بالبشرة</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">يبدأ من</span>
+<span class="text-xl font-bold text-primary">٥٠ ر.س</span>
+</div>
+<button class="h-9 px-5 bg-primary hover:bg-blue-700 text-white text-sm font-bold rounded-full transition-colors flex items-center gap-2">
+<span>حجز</span>
+<span class="material-symbols-outlined text-[16px] rtl:rotate-180">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col sm:flex-row items-stretch gap-4 rounded-xl bg-surface-dark p-3 shadow-sm border border-white/5 hover:border-primary/30 transition-all">
+<!-- Image Section -->
+<div class="w-full sm:w-32 h-40 sm:h-auto shrink-0 relative rounded-lg overflow-hidden">
+<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-md flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs font-bold text-white">4.7</span>
+<span class="text-[10px] text-gray-300">(85)</span>
+</div>
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Barber holding scissors styling hair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsCpVkj3NF1gWJusq3POtlFm6NAewFFQOnV_Dv0trmR1giY8yn5ayAvWT5wnc6Z0fxIDexX2e9tXIl--AcbwQX0MGFFbiCA8Y-9lzawxdI6eSTdlMzLOp9Mad1xlE8nKRGwk931uqxKHjZzgGF0VFdQoQOdnEj0Qu6wYo-uRCDexjJLlXpsP3No4ck_3rLhN-nSnWK5iO_jhg_dZ5EaPEDtktFmcFf9tS39qO-cnqE3bxbahLDzJBKCSnUgW9ufntaR3o7BP9YuYx5");'>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-white leading-tight mb-1">جنتلمان باربر</h3>
+<div class="flex items-center gap-1 text-gray-400 text-xs bg-white/5 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>3.5 كم</span>
+</div>
+</div>
+<p class="text-gray-400 text-sm font-normal line-clamp-1">طريق الملك فهد، العقيق</p>
+<!-- Tags -->
+<div class="flex gap-2 mt-3 flex-wrap">
+<span class="px-2 py-1 rounded-md bg-white/5 text-[10px] text-gray-300">حلاقة كلاسيكية</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">يبدأ من</span>
+<span class="text-xl font-bold text-white">٤٥ ر.س</span>
+</div>
+<button class="h-9 px-5 bg-surface-darker hover:bg-white/10 text-white border border-white/10 hover:border-white/30 text-sm font-bold rounded-full transition-colors flex items-center gap-2">
+<span>حجز</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col sm:flex-row items-stretch gap-4 rounded-xl bg-surface-dark p-3 shadow-sm border border-white/5 hover:border-primary/30 transition-all">
+<!-- Image Section -->
+<div class="w-full sm:w-32 h-40 sm:h-auto shrink-0 relative rounded-lg overflow-hidden">
+<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-md flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+<span class="text-xs font-bold text-white">4.5</span>
+<span class="text-[10px] text-gray-300">(210)</span>
+</div>
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern salon equipment and interior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCylE_ZbWJvchjygkah3uMVJl7XbH7z97NZg3MPYEVSlHlgN-ojScLwHTQzeDoq8_gK8JUjjIzLXT27u9UcOk7qAsQ3FO8PRyddOmqw5BshE72vcaceqM7_x0GM0CkuwuK7U99918zrx-GmqetuinjgGJC62wP7A5TKlOE4D5HQevNgknEock6E00hgdrXSNZc8nPBwUzAH0nmhjzjjMWKAoU7b9H-uHlCCmUGguwMlwvknAg94cmrDmETvTdK_kkcL-RJeE8WcQCPq");'>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-white leading-tight mb-1">صالون النخبة</h3>
+<div class="flex items-center gap-1 text-gray-400 text-xs bg-white/5 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>0.8 كم</span>
+</div>
+</div>
+<p class="text-gray-400 text-sm font-normal line-clamp-1">طريق الامام سعود</p>
+<div class="flex gap-2 mt-3 flex-wrap">
+<span class="px-2 py-1 rounded-md bg-white/5 text-[10px] text-gray-300">سبا</span>
+<span class="px-2 py-1 rounded-md bg-white/5 text-[10px] text-gray-300">مساج</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">يبدأ من</span>
+<span class="text-xl font-bold text-white">٧٥ ر.س</span>
+</div>
+<button class="h-9 px-5 bg-surface-darker hover:bg-white/10 text-white border border-white/10 hover:border-white/30 text-sm font-bold rounded-full transition-colors flex items-center gap-2">
+<span>حجز</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Navigation -->
+<div class="fixed bottom-0 w-full bg-surface-dark/90 backdrop-blur-lg border-t border-white/5 pb-5 pt-3 px-6 z-50">
+<div class="flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-current">search</span>
+<span class="text-[10px] font-medium">بحث</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium">مواعيدي</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">حسابي</span>
+</button>
+</div>
+</div>
+</body></html>

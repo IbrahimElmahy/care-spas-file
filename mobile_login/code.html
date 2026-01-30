@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobile Login</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                        "gold": "#D4AF37", // Custom gold for accents
+                        "surface": "#1c1f26",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "IBM Plex Sans Arabic", "sans-serif"],
+                        "arabic": ["IBM Plex Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111621;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3d4452;
+            border-radius: 3px;
+        }
+        
+        /* Font overrides for specific elements */
+        .font-arabic {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-hidden bg-background-dark">
+<!-- Decorative Background Elements -->
+<div class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-[#16439c]/20 to-transparent pointer-events-none z-0"></div>
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-gold/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+<!-- Header -->
+<div class="relative z-10 flex items-center justify-between p-6 pt-8">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors text-white">
+<span class="material-symbols-outlined !text-[24px]">arrow_forward</span> <!-- RTL arrow -->
+</button>
+<button class="text-[#9ea7b7] hover:text-white text-sm font-arabic font-bold transition-colors">
+                تخطي
+            </button>
+</div>
+<!-- Main Content -->
+<div class="relative z-10 flex flex-col flex-1 px-6 pt-4 pb-8">
+<!-- Icon / Logo Placeholder -->
+<div class="mb-8 flex justify-center">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-surface to-black border border-white/10 flex items-center justify-center shadow-lg shadow-black/50">
+<span class="material-symbols-outlined text-gold !text-[32px]">content_cut</span>
+</div>
+</div>
+<!-- Text Section -->
+<div class="text-center mb-10">
+<h1 class="font-arabic text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
+                    تسجيل الدخول
+                </h1>
+<p class="font-arabic text-[#9ea7b7] text-base leading-relaxed">
+                    أدخل رقم الجوال للمتابعة واستمتع بتجربة حجز مميزة
+                </p>
+</div>
+<!-- Input Section -->
+<div class="w-full mb-8">
+<label class="block font-arabic text-sm font-medium text-[#9ea7b7] mb-3 text-right">
+                    رقم الجوال
+                </label>
+<!-- Phone Input Container -->
+<!-- Using dir="ltr" on this specific container to ensure phone number format looks correct (+966 5X...) -->
+<div class="group relative flex items-center w-full h-16 rounded-full bg-surface border border-[#3d4452] focus-within:border-gold focus-within:ring-1 focus-within:ring-gold/50 transition-all duration-300 shadow-inner" dir="ltr">
+<!-- Country Code & Flag -->
+<div class="flex items-center gap-3 pl-5 pr-4 h-full border-r border-[#3d4452] bg-white/5 rounded-l-full">
+<div class="w-6 h-4 relative overflow-hidden rounded-sm shadow-sm" data-alt="Saudi Arabia Flag">
+<!-- CSS pure flag representation or placeholder -->
+<div class="w-full h-full bg-[#006C35] flex items-center justify-center">
+<div class="text-[8px] text-white leading-none font-bold">KSA</div>
+</div>
+</div>
+<span class="text-white font-display font-bold text-lg tracking-wide">+966</span>
+<span class="material-symbols-outlined text-[#9ea7b7] !text-[16px]">expand_more</span>
+</div>
+<!-- Input Field -->
+<input class="flex-1 w-full bg-transparent border-none text-white placeholder:text-[#505868] focus:ring-0 text-xl font-display font-medium h-full px-4 rounded-r-full" placeholder="5x xxx xxxx" type="tel"/>
+<!-- Phone Icon Indicator -->
+<div class="absolute right-5 text-gold opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+</div>
+</div>
+<!-- Spacer -->
+<div class="flex-1"></div>
+<!-- Action Button -->
+<div class="w-full mt-auto">
+<button class="relative w-full h-14 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center group overflow-hidden transition-all shadow-lg shadow-primary/25">
+<!-- Subtle Gold Shine Effect -->
+<div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+<span class="font-arabic text-white text-lg font-bold tracking-wide z-10">
+                        إرسال رمز التحقق
+                    </span>
+<span class="material-symbols-outlined text-white/80 !text-[20px] mr-2 transition-transform group-hover:-translate-x-1 z-10" dir="rtl">
+                        arrow_back
+                    </span>
+</button>
+<div class="mt-6 text-center">
+<p class="font-arabic text-xs text-[#505868]">
+                        بالنقر على تسجيل الدخول، فإنك توافق على 
+                        <a class="text-white underline decoration-gold/50 hover:decoration-gold decoration-1 underline-offset-4 transition-all" href="#">شروط الخدمة</a>
+                        و
+                        <a class="text-white underline decoration-gold/50 hover:decoration-gold decoration-1 underline-offset-4 transition-all" href="#">سياسة الخصوصية</a>
+</p>
+</div>
+</div>
+</div>
+<!-- Bottom Safe Area Spacer -->
+<div class="h-6 w-full"></div>
+</div>
+</body></html>
